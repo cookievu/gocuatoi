@@ -2,12 +2,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Góc của tôi</title>
-    <link>gocuatoi.com/tags/</link>
+    <link>https://gocuatoi.com/tags/</link>
     <description>Recent content in Tags on Góc của tôi</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>&amp;copy; 2019 Yurizal Susanto</copyright>
     
-	<atom:link href="gocuatoi.com/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://gocuatoi.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
   </channel>
