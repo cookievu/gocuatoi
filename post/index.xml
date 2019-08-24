@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Góc của tôi</title>
-    <link>https://gocuatoi.com/</link>
-    <description>Recent content on Góc của tôi</description>
+    <title>Post on Góc của tôi</title>
+    <link>https://gocuatoi.com/post/</link>
+    <description>Recent content in Post on Góc của tôi</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>&amp;copy; 2019 Yurizal Susanto</copyright>
     <lastBuildDate>Sat, 24 Aug 2019 16:33:22 +0700</lastBuildDate>
     
-	<atom:link href="https://gocuatoi.com/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://gocuatoi.com/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -20,15 +20,6 @@
       <description>Dear em
 Con người thường muốn làm gì khi có người yêu?
 Được cùng người yêu nhắn tin mỗi tối. Được chúc ngủ ngon, chào ngày mới. Được cũng nhau ngồi lê ăn tối, uống nước lề đường. Được cùng dắt tay nhau đi dạo phố. Cùng nhau du lịch khắp nơi. Cùng chở nhau đi lễ nhà thờ. Cùng nhau dự lễ cưới của chính mình. Và cùng yêu thương chăm sóc lẫn nhau cho tới khi già.</description>
-    </item>
-    
-    <item>
-      <title>License</title>
-      <link>https://gocuatoi.com/about/license/</link>
-      <pubDate>Sat, 24 Jun 2017 20:50:41 +0700</pubDate>
-      
-      <guid>https://gocuatoi.com/about/license/</guid>
-      <description>Manis Hugo Theme Manis is licensed under the MIT License. Check the LICENSE file for details.</description>
     </item>
     
   </channel>
