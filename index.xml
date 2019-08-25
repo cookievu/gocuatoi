@@ -6,10 +6,20 @@
     <description>Recent content on Góc của tôi</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>&amp;copy; 2019 Yurizal Susanto</copyright>
-    <lastBuildDate>Sat, 24 Aug 2019 16:33:22 +0700</lastBuildDate>
+    <lastBuildDate>Sun, 25 Aug 2019 09:10:24 +0700</lastBuildDate>
     
 	<atom:link href="https://gocuatoi.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Singleton Trong Nodejs</title>
+      <link>https://gocuatoi.com/post/singleton-trong-nodejs/</link>
+      <pubDate>Sun, 25 Aug 2019 09:10:24 +0700</pubDate>
+      
+      <guid>https://gocuatoi.com/post/singleton-trong-nodejs/</guid>
+      <description>Trong NodeJS, người ta thường sử dụng module. Rất nhiều người gọi đây singleton pattern của Node.js, nhưng đây không thực sự là singleton.
+Không, đây chỉ là một đối tượng (object) được lưu trong bộ nhớ cache - và một đối tượng không được bảo đảm sẽ được sử dụng lại trên tất cả các tệp yêu cầu nó.</description>
+    </item>
     
     <item>
       <title>Tin nhắn ngày thứ 5</title>

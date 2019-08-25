@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="vi">
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="generator" content="Hugo 0.57.2" />
+		<title>Singleton Trong Nodejs - Góc của tôi</title>
+
+		<meta name="description" content="Trong NodeJS, người ta thường sử dụng module. Rất nhiều người gọi đây singleton pattern của Node.js, nhưng đây không thực sự là singleton.
+Không, đây chỉ là một đối tượng (object) được lưu trong bộ nhớ cache - và một đối tượng không được bảo đảm sẽ được sử dụng lại trên tất cả các tệp yêu cầu nó.">
+
+
+		
+		<link rel="shortcut icon" href="/img/favicon.png">
+		
+	
+		
+
+
+
+
+<link rel="stylesheet" href="/css/ui.css">
+
+	
+		
+		<link rel="stylesheet" href="/css/custom.css"/>
+		
+
+		<link href="https://fonts.googleapis.com/css?family=Nunito:300,400&display=swap&subset=vietnamese" rel="stylesheet">
+
+		
+	</head>
+
+<body>
+<header class="container no-print">
+	<div class="u-header">
+		<nav class="bar">
+	<ul><li>
+			<a href="/">
+				<img class="icon-text" src="/img/prev.svg"/>
+			</a>
+		</li><li><a href="/about">About </a></li><li><a href="/post/">Posts</a></li></ul>
+</nav>
+
+	</div>
+</header>
+<main class="container">
+
+<article>
+	<header><hgroup id="brand">
+	<h1>Singleton Trong Nodejs</h1>
+	<h5>
+		
+		<time datetime="2019-08-25 09:10:24 &#43;0700 &#43;07">Aug 25, 2019</time>
+		<span class="no-print">
+			<span>
+	</h5>
+	
+</hgroup>
+<hr class="sep" />
+</header>
+	<p>Trong NodeJS, người ta thường sử dụng module. Rất nhiều người gọi đây <a href="https://en.wikipedia.org/wiki/Singleton_pattern">singleton pattern</a> của Node.js, nhưng đây không thực sự là singleton.</p>
+
+<p><img src="/img/signleton-trong-nodejs.jpeg" alt="Người độc thân" /></p>
+
+<p>Không, đây chỉ là một đối tượng (object) được lưu trong bộ nhớ cache - và một đối tượng không được bảo đảm sẽ được sử dụng lại trên tất cả các tệp yêu cầu nó.</p>
+
+</article>
+<nav class="no-print post-nav">
+
+	<a class="prev-post" href="https://gocuatoi.com/post/tin-nhan-ngay-thu-5/">
+		<img class="icon-text" src="/img/prev.svg"/>Tin nhắn ngày thứ 5</a>
+
+
+</nav>
+
+
+
+
+	<div id="disqus_thread" class="no-print"></div>
+<script type="text/javascript">
+
+(function() {
+    
+    
+    if (window.location.hostname == "localhost")
+        return;
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    var disqus_shortname = 'gocuatoi';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+			<hr class="sep" />
+		</main>
+		<footer class="container no-print">
+			<div class="u-footer">
+				
+<a href="mailto:tuanvu0995@gmail.com"><img class="icon-social" src="/img/email.svg" alt="Email Me!"/></a>
+
+
+<a href="https://github.com/cookievu/"><img class="icon-social" src="/img/github.svg" alt="Github"/></a>
+
+
+<a href="https://twitter.com/cookievu"><img class="icon-social" src="/img/twitter.svg" alt="Twitter"/></a>
+
+<a href="https://gocuatoi.com/index.xml" target="_blank"><img class="icon-social" src="/img/feed.svg" alt="Feed"></a>
+
+				<p>
+					
+					Theme used: <a href="https://github.com/yursan9/manis-hugo-theme">Manis</a><br>
+					
+					
+					&copy; 2019 Yurizal Susanto
+					
+					
+					| <a href="/about/license">License</a>
+					
+				</p>
+				
+				<a href="#brand">
+					<img class="icon-text" src="/img/toup.svg" alt="To Up"/>
+					<span>Back to Up</span>
+				</a>
+				
+			</div>
+		</footer>
+		
+	</body>
+</html>
+
