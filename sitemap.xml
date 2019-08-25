@@ -8,12 +8,27 @@
   </url>
   
   <url>
+    <loc>https://gocuatoi.com/tags/nodejs/</loc>
+    <lastmod>2019-08-25T09:10:24+07:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://gocuatoi.com/post/</loc>
     <lastmod>2019-08-25T09:10:24+07:00</lastmod>
   </url>
   
   <url>
+    <loc>https://gocuatoi.com/tags/singleton/</loc>
+    <lastmod>2019-08-25T09:10:24+07:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://gocuatoi.com/post/singleton-trong-nodejs/</loc>
+    <lastmod>2019-08-25T09:10:24+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://gocuatoi.com/tags/</loc>
     <lastmod>2019-08-25T09:10:24+07:00</lastmod>
   </url>
   
@@ -30,10 +45,6 @@
   <url>
     <loc>https://gocuatoi.com/about/</loc>
     <lastmod>2017-06-24T18:57:12+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://gocuatoi.com/tags/</loc>
   </url>
   
 </urlset>
