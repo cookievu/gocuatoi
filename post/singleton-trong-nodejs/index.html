@@ -7,7 +7,8 @@
 		<title>Singleton Trong Nodejs - Góc của tôi</title>
 
 		<meta name="description" content="Trong NodeJS, người ta thường sử dụng module. Rất nhiều người gọi đây singleton pattern của Node.js, nhưng đây không thực sự là singleton.
-Không, đây chỉ là một đối tượng (object) được lưu trong bộ nhớ cache - và một đối tượng không được bảo đảm sẽ được sử dụng lại trên tất cả các tệp yêu cầu nó.">
+Không, đây chỉ là một đối tượng (object) được lưu trong bộ nhớ cache - và một đối tượng không được bảo đảm sẽ được sử dụng lại trên tất cả các tệp yêu cầu nó.
+Vấn đề với require Khi bạn gọi hàm &ldquo;require&rdquo; trong Node, nó sử dụng đường dẫn của tệp được require làm khóa bộ đệm.">
 
 
 		
@@ -59,11 +60,99 @@ Không, đây chỉ là một đối tượng (object) được lưu trong bộ 
 </hgroup>
 <hr class="sep" />
 </header>
-	<p>Trong NodeJS, người ta thường sử dụng module. Rất nhiều người gọi đây <a href="https://en.wikipedia.org/wiki/Singleton_pattern">singleton pattern</a> của Node.js, nhưng đây không thực sự là singleton.</p>
+	
+
+<p>Trong NodeJS, người ta thường sử dụng module. Rất nhiều người gọi đây <a href="https://en.wikipedia.org/wiki/Singleton_pattern">singleton pattern</a> của Node.js, nhưng đây không thực sự là singleton.</p>
 
 <p><img src="/img/signleton-trong-nodejs.jpeg" alt="Người độc thân" /></p>
 
 <p>Không, đây chỉ là một đối tượng (object) được lưu trong bộ nhớ cache - và một đối tượng không được bảo đảm sẽ được sử dụng lại trên tất cả các tệp yêu cầu nó.</p>
+
+<h2 id="vấn-đề-với-require">Vấn đề với require</h2>
+
+<p>Khi bạn gọi hàm &ldquo;require&rdquo; trong Node, nó sử dụng đường dẫn của tệp được require làm khóa bộ đệm. Nếu bạn require cùng một tệp từ nhiều tệp khác, bạn thường nhận được cùng một bản sao lưu của module được trả lại cho bạn.</p>
+
+<p>Điều này thật tuyệt vời để bảo tồn bộ nhớ và thậm chí tạo ra một &ldquo;poor facsimile&rdquo; của một singleton. Tuy nhiên, rất dễ dàng để phá vỡ tính năng đối tượng được lưu trong bộ nhớ cache của &ldquo;require&rdquo;.</p>
+
+<p>Có hai trường hợp cốt lõi khiến cho &ldquo;require&rdquo; hoạt động không như mong đợi:</p>
+
+<ul>
+<li>Case Sensitivity: thay đổi chữ hoa / thường</li>
+<li>NPM Module Dependencies: khi một module khác cài đặt giống với module từ NPM</li>
+</ul>
+
+<h2 id="case-sensitivity">Case Sensitivity</h2>
+
+<p>Windows và macOS (theo mặc định) không phân biệt chữ hoa chữ thường trên hệ thống tệp. Bạn có thể tìm một tệp có tên là foo.js, và một tệp có tên là FOO.js và cả hai tìm kiếm này sẽ tìm thấy cùng một tệp trong cùng một thư mục, bất kể tên của tên tệp thực tế là hoa hay thường. Nhưng, chúng tôi không thể có hai tệp khác nhau trên macOS hoặc Windows: foo.js và FOO.js. Windows và macOS sẽ không cho phép điều đó.</p>
+
+<p>Mặc dù vậy, với Node.js, nó không biết rằng, foo.js, và FOO.js, là cùng một tệp, vì NodeJs* phân biệt chữ hoa chữ thường và nó sẽ coi tên tệp là hai module riêng biệt.</p>
+
+<p>Do đó, rất dễ dàng để phá vỡ bộ đệm đối tượng của require trên cả Windows và OSX.</p>
+
+<p>Tạo một tệp &ldquo;foo.js&rdquo; đơn giản:</p>
+<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">foo</span><span class="o">:</span> <span class="s2">&#34;bar&#34;</span>
+<span class="p">};</span>
+</code></pre></div>
+<p>Bây giờ, require nó hai lần với tên thường và in hoa ở tệp index.js:</p>
+<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">foo</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&#34;./foo&#34;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">FOO</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&#34;./FOO&#34;</span><span class="p">);</span>
+
+<span class="nx">FOO</span><span class="p">.</span><span class="nx">foo</span> <span class="o">=</span> <span class="s2">&#34;something different&#34;</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;the foo object&#34;</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">foo</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="mi">2</span><span class="p">));</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;&#34;</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;the FOO object&#34;</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">FOO</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="mi">2</span><span class="p">));</span>
+</code></pre></div>
+<p>Giờ chạy tệp index.js và xem điều gì sảy ra:</p>
+<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">$</span> <span class="nx">node</span> <span class="nx">index</span><span class="p">.</span><span class="nx">js</span> 
+<span class="nx">the</span> <span class="nx">foo</span> <span class="nx">object</span>
+<span class="p">{</span>
+  <span class="s2">&#34;foo&#34;</span><span class="o">:</span> <span class="s2">&#34;bar&#34;</span>
+<span class="p">}</span>
+
+<span class="nx">the</span> <span class="nx">FOO</span> <span class="nx">object</span>
+<span class="p">{</span>
+  <span class="s2">&#34;foo&#34;</span><span class="o">:</span> <span class="s2">&#34;something different&#34;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Trong ví dụ này, hàm require đã sử dụng chuỗi phân biệt chữ hoa chữ thường mà bạn đã cung cấp như một phần của khóa cho bộ đệm. Nhưng, khi nói đến hệ thống tệp, cùng một tệp đã được trả lại cả hai lần.</p>
+
+<p>Vì tệp được tải hai lần, nên nó cũng được đánh giá hai lần và nó tạo ra đối tượng được xuất hai lần - một lần cho trường hợp tên tệp.</p>
+
+<p>Cũng có những vấn đề khác liên quan đến việc đặt sai tên tệp trong hàm require. Ví dụ, nếu bạn triển khai đến một hệ thống tệp phân biệt chữ hoa chữ thường, phiên bản không được đặt giống như tệp thực tế sẽ không tìm thấy tệp.</p>
+
+<p>Mặc dù nói chung là luôn luôn có vỏ đúng, nhưng không phải lúc nào cũng xảy ra. Kết quả là một bộ đệm module bị hỏng trên các hệ thống tệp không phân việt chữ hoa và chữ thường.</p>
+
+<h2 id="npm-module-dependencies">NPM Module Dependencies</h2>
+
+<p>Một tình huống khác trong đó bộ đệm module sẽ không hoạt động là khi bạn cài đặt cùng một module như một dependency của hai hoặc nhiều module từ NPM.</p>
+
+<p>Đó là, nếu dự án của tôi phụ thuộc vào &ldquo;Foo&rdquo; và và &ldquo;Bar&rdquo; từ NPM, và cả Foo và Bar đều phụ thuộc vào &ldquo;Quux&rdquo;, NPM (phiên bản 2 trở xuống) sẽ cài đặt các bản sao khác nhau của &ldquo;Quux&rdquo; đó.</p>
+
+<p>Tôi hiểu rằng NPM v3 cố gắng giải quyết vấn đề này bằng cách làm phẳng dependency list. Nếu cả Foo và Bar đều phụ thuộc vào cùng một phiên bản (hoặc tương thích) của Quux, thì chỉ một bản sao của Quux sẽ được cài đặt.</p>
+
+<p>Tuy nhiên, nếu Foo và Bar phụ thuộc vào các phiên bản Quux khác nhau / không tương thích, nó vẫn sẽ cài đặt cả hai phiên bản. Foo và Bar sẽ không chia sẻ bộ đệm mô-đun trong trường hợp này.</p>
+<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">global</span><span class="p">.</span><span class="nx">foo</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">foo</span><span class="o">:</span> <span class="s2">&#34;bar&#34;</span>
+<span class="p">};</span>
+</code></pre></div>
+<p>Bây giờ, từ bất kỳ nơi nào trong bất kỳ tệp nào khác được tải vào ứng dụng node, với module này được tải, tôi có thể gọi trên &ldquo;foo&rdquo;:</p>
+<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">require</span><span class="p">(</span><span class="s2">&#34;./global&#34;</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">foo</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="mi">2</span><span class="p">));</span>
+</code></pre></div>
+<p>Kết quả là đầu ra giống như bản gốc, nhưng được thực hiện mà không cần tham chiếu trực tiếp đến global module:</p>
+<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">$</span> <span class="nx">node</span> <span class="nx">index</span><span class="p">.</span><span class="nx">js</span> 
+<span class="p">{</span> 
+  <span class="s2">&#34;foo&#34;</span><span class="o">:</span> <span class="s2">&#34;bar&#34;</span> 
+<span class="p">}</span>
+</code></pre></div>
+<p>Mặc dù có những tác động nguy hiểm nghiêm trọng của việc sử dụng biến toàn cục, bao gồm cả JSHint phàn nàn về việc thiếu định nghĩa cho &ldquo;foo&rdquo;, trong trường hợp này, có thể tạo ra một singleton thực sự trong Node bằng kỹ thuật này và thực hiện một cách an toàn, sử dụng các ký hiệu ES6.</p>
 
 </article>
 <nav class="no-print post-nav">
