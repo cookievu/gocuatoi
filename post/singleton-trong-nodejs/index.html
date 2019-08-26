@@ -143,7 +143,7 @@ Vấn đề với require Khi bạn gọi hàm &ldquo;require&rdquo; trong Node,
 
 <p>Tuy nhiên, nếu Foo và Bar phụ thuộc vào các phiên bản Quux khác nhau / không tương thích, nó vẫn sẽ cài đặt cả hai phiên bản. Foo và Bar sẽ không chia sẻ bộ đệm mô-đun trong trường hợp này.</p>
 
-<h2 id="làm-cho-nó-cache-buster-proof">Làm cho nó Cache-Buster-Proof</h2>
+<h2 id="make-it-cache-buster-proof">Make It Cache-Buster-Proof</h2>
 
 <p>Nếu gọi hàm require trong Node không tạo ra một singleton thực sự, nhưng thay vào đó là một module được lưu trong bộ nhớ cache, làm thế nào có thể tạo một singleton thực sự?</p>
 
@@ -167,7 +167,7 @@ Vấn đề với require Khi bạn gọi hàm &ldquo;require&rdquo; trong Node,
 </code></pre></div>
 <p>Mặc dù có những tác động nguy hiểm nghiêm trọng của việc sử dụng biến toàn cục, bao gồm cả JSHint phàn nàn về việc thiếu định nghĩa cho &ldquo;foo&rdquo;, trong trường hợp này, có thể tạo ra một singleton thực sự trong Node bằng kỹ thuật này và thực hiện một cách an toàn, sử dụng các ký hiệu ES6.</p>
 
-<h2 id="cốt-lõi-cảu-một-singletone-đúng-nghĩa">Cốt lõi cảu một singletone đúng nghĩa</h2>
+<h2 id="the-core-of-a-true-singleton">The Core Of A True Singleton</h2>
 
 <p>Có một biến toàn cầu như là &ldquo;foo&rdquo;, nó rất nguy hiểm vì nhiều lý do. Toàn bộ cộng đồng JavaScript đã chuyển sang sử dụng các module để ngăn chặn rất nhiều vấn đề mà toàn cầu gây ra.</p>
 
@@ -227,7 +227,7 @@ Vấn đề với require Khi bạn gọi hàm &ldquo;require&rdquo; trong Node,
 </code></pre></div>
 <p>Đây là cùng một đầu ra đã được hiển thị với tên tệp không nhất quán trước đó. Chúng ta hãy sửa nó và NPM Module đang tải ngay bây giờ.</p>
 
-<h2 id="tạo-một-singleton-đúng-nghĩa">Tạo một Singleton đúng nghĩa</h2>
+<h2 id="creating-the-true-singleton">Creating The True Singleton</h2>
 
 <p>Phần cuối cùng của bài viết là cách tạo ra singleton thực sự, là để đảm bảo rằng bất kỳ phiên bản nào của tệp được tải sẽ không ghi đè lên global symbol. Thật không may, có một vấn đề với cách symbol hiện tại. Mỗi khi tệp được tải, một thể hiện mới của symbol được tạo.</p>
 
