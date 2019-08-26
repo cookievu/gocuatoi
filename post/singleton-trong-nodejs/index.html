@@ -142,6 +142,14 @@ Vấn đề với require Khi bạn gọi hàm &ldquo;require&rdquo; trong Node,
 <p>Tôi hiểu rằng NPM v3 cố gắng giải quyết vấn đề này bằng cách làm phẳng dependency list. Nếu cả Foo và Bar đều phụ thuộc vào cùng một phiên bản (hoặc tương thích) của Quux, thì chỉ một bản sao của Quux sẽ được cài đặt.</p>
 
 <p>Tuy nhiên, nếu Foo và Bar phụ thuộc vào các phiên bản Quux khác nhau / không tương thích, nó vẫn sẽ cài đặt cả hai phiên bản. Foo và Bar sẽ không chia sẻ bộ đệm mô-đun trong trường hợp này.</p>
+
+<h2 id="làm-cho-nó-cache-buster-proof">Làm cho nó Cache-Buster-Proof</h2>
+
+<p>Nếu gọi hàm require trong Node không tạo ra một singleton thực sự, nhưng thay vào đó là một module được lưu trong bộ nhớ cache, làm thế nào có thể tạo một singleton thực sự?</p>
+
+<p>Thật không may, câu trả lời là một điều gì đó rất tệ, một cách thực hành thường nên tránh các biến toàn cầu.</p>
+
+<p>Node không cho phép bạn xuất một biến toàn cục, bất chấp mọi thứ nó làm để thử và ngăn bạn làm điều này. Để làm điều đó, bạn phải sử dụng từ khóa &ldquo;global&rdquo; rõ ràng:</p>
 <div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">global</span><span class="p">.</span><span class="nx">foo</span> <span class="o">=</span> <span class="p">{</span>
   <span class="nx">foo</span><span class="o">:</span> <span class="s2">&#34;bar&#34;</span>
 <span class="p">};</span>
@@ -158,6 +166,150 @@ Vấn đề với require Khi bạn gọi hàm &ldquo;require&rdquo; trong Node,
 <span class="p">}</span>
 </code></pre></div>
 <p>Mặc dù có những tác động nguy hiểm nghiêm trọng của việc sử dụng biến toàn cục, bao gồm cả JSHint phàn nàn về việc thiếu định nghĩa cho &ldquo;foo&rdquo;, trong trường hợp này, có thể tạo ra một singleton thực sự trong Node bằng kỹ thuật này và thực hiện một cách an toàn, sử dụng các ký hiệu ES6.</p>
+
+<h2 id="cốt-lõi-cảu-một-singletone-đúng-nghĩa">Cốt lõi cảu một singletone đúng nghĩa</h2>
+
+<p>Có một biến toàn cầu như là &ldquo;foo&rdquo;, nó rất nguy hiểm vì nhiều lý do. Toàn bộ cộng đồng JavaScript đã chuyển sang sử dụng các module để ngăn chặn rất nhiều vấn đề mà toàn cầu gây ra.</p>
+
+<p>Nhưng với sự ra đời của <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol">ES6 (ES2015) Symbols</a>, có thể sử dụng biến toàn cục và không phá hủy hoàn toàn tính toàn vẹn của ứng dụng của bạn.</p>
+<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="k">const</span> <span class="nx">FOO_KEY</span> <span class="o">=</span> <span class="nx">Symbol</span><span class="p">(</span><span class="s2">&#34;foo&#34;</span><span class="p">);</span>
+
+<span class="nx">global</span><span class="p">[</span><span class="nx">FOO_KEY</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">foo</span><span class="o">:</span> <span class="s2">&#34;bar&#34;</span>
+<span class="p">};</span>
+</code></pre></div>
+<p>Sử dụng một Symbol, bạn có thể gắn một cái gì đó vào đối tượng toàn cầu với độ an toàn tương đối. Nhưng điều này chỉ là một nửa giải pháp đơn lẻ, như bạn sẽ thấy trong giây lát.</p>
+
+<p>Tuy nhiên, trước khi chuyển sang nửa cuối của giải pháp, singleton nên cung cấp một API cụ thể để phù hợp với định nghĩa mẫu: một thuộc tính của instance mà bạn có thể lấy một thể hiện của một đối tượng.</p>
+
+<p>Sử dụng <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty">Object.defineProperty</a> và <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/freeze">Object.freeze</a> , điều này khá dễ dàng để thêm vào theo cách đảm bảo sự an toàn của API singleton.</p>
+<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="c1">// define the actual singleton instance
+</span><span class="c1">// ------------------------------------
+</span><span class="c1"></span>
+<span class="k">const</span> <span class="nx">FOO_KEY</span> <span class="o">=</span> <span class="nx">Symbol</span><span class="p">(</span><span class="s2">&#34;foo&#34;</span><span class="p">);</span>
+
+<span class="nx">global</span><span class="p">[</span><span class="nx">FOO_KEY</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">foo</span><span class="o">:</span> <span class="s2">&#34;bar&#34;</span>
+<span class="p">};</span>
+
+<span class="c1">// define the singleton API
+</span><span class="c1">// ------------------------
+</span><span class="c1"></span>
+<span class="kd">var</span> <span class="nx">singleton</span> <span class="o">=</span> <span class="p">{};</span>
+
+<span class="nb">Object</span><span class="p">.</span><span class="nx">defineProperty</span><span class="p">(</span><span class="nx">singleton</span><span class="p">,</span> <span class="s2">&#34;instance&#34;</span><span class="p">,</span> <span class="p">{</span>
+  <span class="nx">get</span><span class="o">:</span> <span class="kd">function</span><span class="p">(){</span>
+    <span class="k">return</span> <span class="nx">global</span><span class="p">[</span><span class="nx">FOO_KEY</span><span class="p">];</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+
+<span class="c1">// ensure the API is never changed
+</span><span class="c1">// -------------------------------
+</span><span class="c1"></span>
+<span class="nb">Object</span><span class="p">.</span><span class="nx">freeze</span><span class="p">(</span><span class="nx">singleton</span><span class="p">);</span>
+
+<span class="c1">// export the singleton API only
+</span><span class="c1">// -----------------------------
+</span><span class="c1"></span>
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">singleton</span><span class="p">;</span>
+</code></pre></div>
+<p>Với mã này, bạn có thể yêu cầu cùng một tệp nhiều lần và bạn sẽ chỉ nhận được một thể hiện đối tượng. Nhưng nó chưa giải thích cho trường hợp tải tệp case insensitive hoặc các vấn đề NPM module dependency mà chúng ta đã thấy trước đó.</p>
+<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">$</span> <span class="nx">node</span> <span class="nx">index</span><span class="p">.</span><span class="nx">js</span> 
+<span class="nx">the</span> <span class="nx">foo</span> <span class="nx">object</span>
+<span class="p">{</span>
+  <span class="s2">&#34;foo&#34;</span><span class="o">:</span> <span class="s2">&#34;bar&#34;</span>
+<span class="p">}</span>
+
+<span class="nx">the</span> <span class="nx">FOO</span> <span class="nx">object</span>
+<span class="p">{</span>
+  <span class="s2">&#34;foo&#34;</span><span class="o">:</span> <span class="s2">&#34;something different&#34;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Đây là cùng một đầu ra đã được hiển thị với tên tệp không nhất quán trước đó. Chúng ta hãy sửa nó và NPM Module đang tải ngay bây giờ.</p>
+
+<h2 id="tạo-một-singleton-đúng-nghĩa">Tạo một Singleton đúng nghĩa</h2>
+
+<p>Phần cuối cùng của bài viết là cách tạo ra singleton thực sự, là để đảm bảo rằng bất kỳ phiên bản nào của tệp được tải sẽ không ghi đè lên global symbol. Thật không may, có một vấn đề với cách symbol hiện tại. Mỗi khi tệp được tải, một thể hiện mới của symbol được tạo.</p>
+
+<p>Để khắc phục điều đó, bạn phải sử dụng bộ đệm global symbol. Ngoài ra, bạn cần kiểm tra xem đối tượng global đã có giá trị trên symbol đó chưa. Cuối cùng, bạn cần đặt cho symbol này một tên duy nhất, vì hiện tại bạn có khả năng hiển thị symbol cho các nhà phát triển khác.</p>
+<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="c1">// create a unique, global symbol name
+</span><span class="c1">// -----------------------------------
+</span><span class="c1"></span>
+<span class="k">const</span> <span class="nx">FOO_KEY</span> <span class="o">=</span> <span class="nx">Symbol</span><span class="p">.</span><span class="k">for</span><span class="p">(</span><span class="s2">&#34;My.App.Namespace.foo&#34;</span><span class="p">);</span>
+
+<span class="c1">// check if the global object has this symbol
+</span><span class="c1">// add it if it does not have the symbol, yet
+</span><span class="c1">// ------------------------------------------
+</span><span class="c1"></span>
+<span class="kd">var</span> <span class="nx">globalSymbols</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">getOwnPropertySymbols</span><span class="p">(</span><span class="nx">global</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">hasFoo</span> <span class="o">=</span> <span class="p">(</span><span class="nx">globalSymbols</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="nx">FOO_KEY</span><span class="p">)</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">hasFoo</span><span class="p">){</span>
+  <span class="nx">global</span><span class="p">[</span><span class="nx">FOO_KEY</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">foo</span><span class="o">:</span> <span class="s2">&#34;bar&#34;</span>
+  <span class="p">};</span>
+<span class="p">}</span>
+
+<span class="c1">// define the singleton API
+</span><span class="c1">// ------------------------
+</span><span class="c1"></span>
+<span class="kd">var</span> <span class="nx">singleton</span> <span class="o">=</span> <span class="p">{};</span>
+
+<span class="nb">Object</span><span class="p">.</span><span class="nx">defineProperty</span><span class="p">(</span><span class="nx">singleton</span><span class="p">,</span> <span class="s2">&#34;instance&#34;</span><span class="p">,</span> <span class="p">{</span>
+  <span class="nx">get</span><span class="o">:</span> <span class="kd">function</span><span class="p">(){</span>
+    <span class="k">return</span> <span class="nx">global</span><span class="p">[</span><span class="nx">FOO_KEY</span><span class="p">];</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+
+<span class="c1">// ensure the API is never changed
+</span><span class="c1">// -------------------------------
+</span><span class="c1"></span>
+<span class="nb">Object</span><span class="p">.</span><span class="nx">freeze</span><span class="p">(</span><span class="nx">singleton</span><span class="p">);</span>
+
+<span class="c1">// export the singleton API only
+</span><span class="c1">// -----------------------------
+</span><span class="c1"></span>
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">singleton</span><span class="p">;</span>
+</code></pre></div>
+<p>Đoạn mã này sử dụng <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol/for">Symbol.for</a> để có được một symbol được chia sẻ trên toàn cầu. Sau đó, nó <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/getOwnPropertySymbols">tải tất cả các biểu tượng từ đối tượng toàn cầu</a> và kiểm tra sự hiện diện của global symbol mà bạn đã tạo. Nếu global symbol đã tồn tại, không ghi đè lên nó.</p>
+
+<p>Với điều này, việc gọi mã gốc với tên tệp hỗn hợp sẽ tạo ra cùng một đối tượng - một singleton thực sự!</p>
+<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">$</span> <span class="nx">node</span> <span class="nx">index</span><span class="p">.</span><span class="nx">js</span> 
+<span class="nx">the</span> <span class="nx">foo</span> <span class="nx">object</span>
+<span class="p">{</span>
+  <span class="s2">&#34;foo&#34;</span><span class="o">:</span> <span class="s2">&#34;something different&#34;</span>
+<span class="p">}</span>
+
+<span class="nx">the</span> <span class="nx">FOO</span> <span class="nx">object</span>
+<span class="p">{</span>
+  <span class="s2">&#34;foo&#34;</span><span class="o">:</span> <span class="s2">&#34;something different&#34;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="a-true-singleton-but-at-what-cost">A True Singleton… But At What Cost?</h2>
+
+<p>Với ES6 Symbols, giờ đây bạn đã có một singleton thực sự tương đối an toàn. Bạn có thể yêu cầu cùng một tệp từ nhiều nơi, vô tình trộn tên tệp và thậm chí require tệp đó từ nhiều trường hợp NPM Dependencies. Kết quả sẽ luôn là một thể hiện đối tượng duy nhất.</p>
+
+<p>Nhưng giải pháp này, cũng như nó có thể hoạt động, sẽ mang lại một số nguy cơ tiềm tàng của chính nó.</p>
+
+<p>Ví dụ: quay lại vấn đề NPM trong đó Foo và Bar phụ thuộc vào Quux. Nếu Foo và Bar phụ thuộc vào các phiên bản Quux khác nhau, không tương thích, bạn sẽ gặp rắc rối. Mô-đun đầu tiên tải Quux sẽ là người chiến thắng về mặt tạo đơn. Một cái khác sẽ hết may mắn và có thể cuối cùng có những vấn đề kỳ lạ rất khó gỡ lỗi.</p>
+
+<p>Điều này có thể được khắc phục bằng cách chèn số phiên bản vào symbol cho singleton của bạn nhưng bây giờ bạn đã quay lại điểm không còn là một singleton thực sự nữa!</p>
+
+<p>Ngoài ra, trường hợp đơn lẻ này không thực sự an toàn. Với việc sử dụng global symbol, có khả năng người khác đang cố gắng sử dụng symbol tương tự cho mục đích khác. Điều này rất khó xảy ra, nhưng vẫn là một khả năng, nhưng bạn có thể yên tâm rằng đó sẽ là một vấn đề thực sự đối với ai đó, ở đâu đó.</p>
+
+<h2 id="the-cost-benefit-analysis-of-both-methods">The Cost-Benefit Analysis Of Both Methods</h2>
+
+<p>Mặc dù đúng là một việc gọi require đơn giản trong Node.js sẽ cung cấp xuất bộ nhớ cache, với điều kiện các câu lệnh require và version là tương thích, đối tượng này là một bản fax kém của một singleton.</p>
+
+<p>Mặt khác của đồng tiền - tạo ra một singleton thực sự với các Biểu tượng ES6 và một biến toàn cục - không phải là không có vấn đề riêng.</p>
+
+<p>Từ kinh nghiệm trong việc sử dụng hàm require như là một triển khai đơn lẻ kém (Nhiều kinh nghiệm, nhớ bạn), tôi có thể nói rằng nó nói chung là đủ tốt. Hãy chắc chắn rằng các câu lệnh require của bạn được đưa ra chính xác, và bạn có thể sẽ đáp ứng 99% nhu cầu của bạn, hoặc hơn thế nữa.</p>
+
+<p>Tuy nhiên, nếu bạn thấy mình cần một singleton thực sự để vượt qua các NPM Dependencies và module khác gọi hàm require, tuy nhiên, điều đó có thể được thực hiện. Chỉ cần chắc chắn rằng bạn thực sự cần điều này trước khi bạn đi xuống con đường này. Mặc dù có thể, nhưng không phải là không có những nguy hiểm riêng.</p>
+
+<p>Bài viết được dịch lại bài viết của <a href="https://derickbailey.com/author/derickbailey/">Derick</a></p>
+
+<p>Link bài gốc: <a href="https://derickbailey.com/2016/03/09/creating-a-true-singleton-in-node-js-with-es6-symbols/">https://derickbailey.com/2016/03/09/creating-a-true-singleton-in-node-js-with-es6-symbols/</a></p>
 
 </article>
 <nav class="no-print post-nav">
