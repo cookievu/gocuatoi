@@ -12,7 +12,7 @@
     
     
     <item>
-      <title>Singleton Trong Nodejs</title>
+      <title>Singleton trong NodeJs</title>
       <link>https://gocuatoi.com/post/singleton-trong-nodejs/</link>
       <pubDate>Sun, 25 Aug 2019 09:10:24 +0700</pubDate>
       
@@ -20,17 +20,6 @@
       <description>Trong NodeJS, người ta thường sử dụng module. Rất nhiều người gọi đây singleton pattern của Node.js, nhưng đây không thực sự là singleton.
 Không, đây chỉ là một đối tượng (object) được lưu trong bộ nhớ cache - và một đối tượng không được bảo đảm sẽ được sử dụng lại trên tất cả các tệp yêu cầu nó.
 Vấn đề với require Khi bạn gọi hàm &amp;ldquo;require&amp;rdquo; trong Node, nó sử dụng đường dẫn của tệp được require làm khóa bộ đệm.</description>
-    </item>
-    
-    <item>
-      <title>Tin nhắn ngày thứ 5</title>
-      <link>https://gocuatoi.com/post/tin-nhan-ngay-thu-5/</link>
-      <pubDate>Sat, 24 Aug 2019 16:33:22 +0700</pubDate>
-      
-      <guid>https://gocuatoi.com/post/tin-nhan-ngay-thu-5/</guid>
-      <description>Dear em
-Con người thường muốn làm gì khi có người yêu?
-Được cùng người yêu nhắn tin mỗi tối. Được chúc ngủ ngon, chào ngày mới. Được cũng nhau ngồi lê ăn tối, uống nước lề đường. Được cùng dắt tay nhau đi dạo phố. Cùng nhau du lịch khắp nơi. Cùng chở nhau đi lễ nhà thờ. Cùng nhau dự lễ cưới của chính mình. Và cùng yêu thương chăm sóc lẫn nhau cho tới khi già.</description>
     </item>
     
   </channel>
