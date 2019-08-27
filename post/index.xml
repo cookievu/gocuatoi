@@ -6,20 +6,10 @@
     <description>Recent content in Post on Góc của tôi</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>&amp;copy; 2019 Vũ</copyright>
-    <lastBuildDate>Tue, 27 Aug 2019 21:26:37 +0700</lastBuildDate>
+    <lastBuildDate>Tue, 27 Aug 2019 20:53:06 +0700</lastBuildDate>
     
 	<atom:link href="https://gocuatoi.com/post/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Tin nhắn ngày thứ năm</title>
-      <link>https://gocuatoi.com/post/tin-nhan-ngay-thu-nam/</link>
-      <pubDate>Tue, 27 Aug 2019 21:26:37 +0700</pubDate>
-      
-      <guid>https://gocuatoi.com/post/tin-nhan-ngay-thu-nam/</guid>
-      <description>Oh Sorry!!! Cần bạn cần mã bí mật để xem nội dung bài biết này.
-Bạn có mã bí mật? Hãy gửi nó đến đúng nơi xem được nhé :kissing:</description>
-    </item>
     
     <item>
       <title>Con Gio Qua Tim Toi</title>
@@ -39,6 +29,16 @@ Bạn có mã bí mật? Hãy gửi nó đến đúng nơi xem được nhé :ki
       <description>Trong NodeJS, người ta thường sử dụng module. Rất nhiều người gọi đây singleton pattern của Node.js, nhưng đây không thực sự là singleton.
 Không, đây chỉ là một đối tượng (object) được lưu trong bộ nhớ cache - và một đối tượng không được bảo đảm sẽ được sử dụng lại trên tất cả các tệp yêu cầu nó.
 Vấn đề với require Khi bạn gọi hàm &amp;ldquo;require&amp;rdquo; trong Node, nó sử dụng đường dẫn của tệp được require làm khóa bộ đệm.</description>
+    </item>
+    
+    <item>
+      <title>Tin nhắn ngày thứ năm</title>
+      <link>https://gocuatoi.com/post/tin-nhan-ngay-thu-nam/</link>
+      <pubDate>Sat, 24 Aug 2019 21:26:37 +0700</pubDate>
+      
+      <guid>https://gocuatoi.com/post/tin-nhan-ngay-thu-nam/</guid>
+      <description>Oh Sorry!!! Cần bạn cần mã bí mật để xem nội dung bài biết này.
+Bạn có mã bí mật? Hãy gửi nó đến đúng nơi xem được nhé :kissing:</description>
     </item>
     
   </channel>
