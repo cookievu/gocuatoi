@@ -6,10 +6,19 @@
     <description>Recent content in Tags on Góc của tôi</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>&amp;copy; 2019 Vũ</copyright>
-    <lastBuildDate>Sun, 25 Aug 2019 09:10:24 +0700</lastBuildDate>
+    <lastBuildDate>Wed, 28 Aug 2019 21:31:15 +0700</lastBuildDate>
     
 	<atom:link href="https://gocuatoi.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>lucid dream</title>
+      <link>https://gocuatoi.com/tags/lucid-dream/</link>
+      <pubDate>Wed, 28 Aug 2019 21:31:15 +0700</pubDate>
+      
+      <guid>https://gocuatoi.com/tags/lucid-dream/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>nodejs</title>
