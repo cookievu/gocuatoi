@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="vi">
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="generator" content="Hugo 0.57.2" />
+		<title>Developer From Scratch - Part 1 - Blog&#39;s Vũ</title>
+
+		<meta name="description" content="Mình là một tên developer khá là -:vãi:- và nay thằng developer này sẽ viết bài để hướng dẫn làm sao để trở thành một developer.">
+
+		<meta property="og:title" content="Developer From Scratch - Part 1" />
+<meta property="og:description" content="Mình là một tên developer khá là -:vãi:- và nay thằng developer này sẽ viết bài để hướng dẫn làm sao để trở thành một developer." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://gocuatoi.com/post/developer-from-scratch/" />
+
+<meta property="og:image" content="https://gocuatoi.com/img/neovim-codeing-golang-singleton-cover.png" />
+<meta property="article:published_time" content="2019-08-29T09:14:42+07:00" />
+<meta property="article:modified_time" content="2019-08-29T09:14:42+07:00" />
+
+		<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://gocuatoi.com/img/neovim-codeing-golang-singleton-cover.png"/>
+
+<meta name="twitter:title" content="Developer From Scratch - Part 1"/>
+<meta name="twitter:description" content="Mình là một tên developer khá là -:vãi:- và nay thằng developer này sẽ viết bài để hướng dẫn làm sao để trở thành một developer."/>
+
+
+		
+		<link rel="shortcut icon" href="/img/favicon.png">
+		
+	
+		
+
+
+
+
+<link rel="stylesheet" href="/css/ui.css">
+
+	
+		
+		<link rel="stylesheet" href="/css/custom.css"/>
+		
+
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400|Space+Mono:300,400&display=swap&subset=vietnamese" rel="stylesheet">
+
+		
+		<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/dracula.min.css">
+		<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+		
+		<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/languages/css.min.js"></script>
+		
+		<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/languages/javascript.min.js"></script>
+		
+		<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/languages/html.min.js"></script>
+		
+		
+	</head>
+
+<body>
+<header class="container no-print">
+	<div class="u-header">
+		<nav class="bar">
+	<ul><li>
+			<a href="/">
+				<img class="icon-text" src="/img/prev.svg"/>
+			</a>
+		</li><li><a href="/about">About </a></li><li><a href="/">Home</a></li><li><a href="/post/">Posts</a></li></ul>
+</nav>
+
+	</div>
+</header>
+<main class="container">
+
+<article>
+	<header><hgroup id="brand">
+	<h1>Developer From Scratch - Part 1</h1>
+	<h5>
+		
+		<time datetime="2019-08-29 09:14:42 &#43;0700 &#43;07">Aug 29, 2019</time>
+		<span class="no-print">
+			-
+				
+				<a href="/tags/developer">developer</a>
+				
+				<a href="/tags/from-scratch">from-scratch</a>
+				<span>
+	</h5>
+	
+</hgroup>
+<hr class="sep" />
+</header>
+	
+
+<p>Mình là một tên developer khá là -:vãi:- và nay mình sẽ viết bài hướng dẫn làm thế nào để có thể trở thành một developer.</p>
+
+<p>Bài viết này mang tính vui vẻ, đọc vui là chính nhưng có thể sử dụng để tham khảo. Dành cho tất cả mọi người, bất cứ ai đều có ý định sẽ trở thành một developer.</p>
+
+<p>Để trở thành một developer bạn cần gi?</p>
+
+<h3 id="máy-tính">Máy tính</h3>
+
+<p>Tất nhiên! Không có máy tính thì lập trình bằng răng =))</p>
+
+<h3 id="kết-nối-internet">Kết nối internet</h3>
+
+<p>Không có thì sao đọc được bài biết này đúng không :D</p>
+
+<h3 id="não">Não</h3>
+
+<p>Wtf??? Ai mà không có não? Không có não thì nó gãy cmr chứ học hành gì. Nói vui thôi chứ nhiều người cũng không có não thật đấy =D</p>
+
+<h3 id="tư-duy-lập-trình">Tư duy lập trình</h3>
+
+<p>Hiểu theo một cách không hề sách vở, thì tư duy là cách chúng ta suy nghĩ để giải quyết vấn đề. Lập trình là chỉ ra các bước cho máy tính giải quyết vấn đề. Vậy tư duy lập trình, là bạn phải biết cách <strong>suy nghĩ sao để giải quyết một vấn đề bằng máy tính</strong>.</p>
+
+<p>Thiếu khả năng này thì bạn sẽ chẳng bao giờ tự làm được sản phẩm đúng nghĩa cả.</p>
+
+<h3 id="khả-năng-học-hỏi">Khả năng học hỏi</h3>
+
+<p>Điều này là cần thiết cho cả cuộc sống của bạn chứ không chỉ riêng cho việc học làm developer.</p>
+
+<h3 id="khả-năng-tìm-kiếm-google">Khả năng tìm kiếm (google)</h3>
+
+<p>Kỹ năng này khá là quan trọng, 90% kiến thưc của developer có được đều là nhờ tìm kiếm từ google. Nếu bạn có khả năng search tốt cộng thêm chút tiếng anh thì chắc chắn cả thế giới developer sẽ nằm trong tay bạn. Thật đấy, nhưng có nhiều người sẽ nói là &ldquo;search làm gì khi ta có thể hỏi&rdquo;. Nghe câu này là muốn đấm vào mặt nó luôn, đâu có ai rảnh rỗi mà đi trả lời mấy ông hoài. Cái cảm giác mà bị một đứa cứ hở tí là lại hỏi phải nói rất chi là điên, trong khi nó có thề lên google và gõ &ldquo;issue title&rdquo; là một đống câu trả lời.</p>
+
+<p>Kĩ năng tìm kiếm google cũng khá là hay ho nên sau này có dịp mình cũng sẽ viết một bài về nó. =))</p>
+
+<h3 id="đam-mê">Đam mê</h3>
+
+<p>Đánh giá khách quan thì lập trình là một công việc khô khan hơn những ngành khác. Bởi bạn sẽ phải làm việc với một màn hình toàn những mã lệnh dài ngoằng ngoằng như thế này cả ngày – Cái mà đa phần mọi người đều thấy nhàm chán.</p>
+
+<p><img src="/img/neovim-codeing-golang-singleton-cover.png" alt="Developer From Scratch" /></p>
+
+<p>Là lập trình viên, bạn còn phải luôn trong trạng thái sẵn sàng OT (Overtime – Làm thêm giờ) khi cần thiết. Phải có một tinh thần thép để đối mặt với những con bugs do chính mình gây ra. Phải chịu áp lực từ deadline, áp lực từ sếp (tùy công ty), áp lực từ tester,…</p>
+
+<p>Nếu không có đam mê, bạn còn chẳng thể gắn bó với nghề này lâu dài chứ đừng nói đến việc phát triển hay thăng tiến.</p>
+
+<h5 id="tóm-gọn-lại-để-trở-thành-lập-trình-viên-thì-bạn-cần-có-tư-duy-lập-trình-tính-ham-học-hỏi-tìm-tòi-và-đam-mê-nhưng-những-điều-đó-chỉ-là-điều-kiện-cần-chứ-chưa-đủ-để-trở-thành-một-developer-chính-hiệu-thì-cần-phải-sở-hữu-nhiều-yếu-tố-khác-còn-việc-có-máy-tính-và-có-thể-tạo-ra-phần-mềm-chỉ-là-hệ-quả-sau-khi-bạn-có-những-yếu-tố-trên-nếu-bạn-có-thiếu-yếu-tố-nào-thì-cũng-đừng-vội-nản-vì-thiếu-cái-gì-thì-ta-học-cái-đó-quan-trọng-vẫn-là-bạn-có-quyết-tâm-theo-đuổi-tới-cùng-đam-mê-hay-không-thôi">Tóm gọn lại, để trở thành lập trình viên thì bạn cần có tư duy lập trình, tính ham học hỏi, tìm tòi và đam mê. Nhưng những điều đó chỉ là điều kiện cần chứ chưa đủ. Để trở thành một developer chính hiệu thì cần phải sở hữu nhiều yếu tố khác. Còn việc có máy tính và có thể tạo ra phần mềm chỉ là hệ quả sau khi bạn có những yếu tố trên. Nếu bạn có thiếu yếu tố nào, thì cũng đừng vội nản, vì thiếu cái gì thì ta học cái đó, quan trọng vẫn là bạn có quyết tâm theo đuổi tới cùng đam mê hay không thôi.</h5>
+
+<p>Trên đây là phần một,  nếu thấy hay thì hãy ghé đọc tiếp phần 2 tại <a href="https://gocuatoi.com">gocuatoi.com</a> nhé</p>
+
+</article>
+<nav class="no-print post-nav">
+
+	<a class="prev-post" href="https://gocuatoi.com/post/lucid-dream-hoc-khi-dang-ngu/">
+		<img class="icon-text" src="/img/prev.svg"/>Lucid Dream - Học khi đang ngủ</a>
+
+
+</nav>
+
+
+
+
+	<div id="disqus_thread" class="no-print"></div>
+<script type="text/javascript">
+
+(function() {
+    
+    
+    if (window.location.hostname == "localhost")
+        return;
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    var disqus_shortname = 'gocuatoi';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+			<hr class="sep" />
+		</main>
+
+		
+		<footer class="container no-print">
+			<div class="u-footer">
+				
+<a href="mailto:tuanvu0995@gmail.com"><img class="icon-social" src="/img/email.svg" alt="Email Me!"/></a>
+
+
+<a href="https://github.com/cookievu"><img class="icon-social" src="/img/github.svg" alt="Github"/></a>
+
+
+<a href="https://twitter.com/laituanvu"><img class="icon-social" src="/img/twitter.svg" alt="Twitter"/></a>
+
+<a href="https://gocuatoi.com/index.xml" target="_blank"><img class="icon-social" src="/img/feed.svg" alt="Feed"></a>
+
+				<p>
+					
+					
+					&copy; 2019 Vũ
+					
+					
+					| <a href="/about/license">License</a>
+					
+				</p>
+				
+				<a href="#brand">
+					<img class="icon-text" src="/img/toup.svg" alt="To Up"/>
+					<span>Back to Up</span>
+				</a>
+				
+			</div>
+		</footer>
+		
+		<script>hljs.initHighlightingOnLoad();</script>
+		
+
+		
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-140402812-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+	</body>
+</html>
+

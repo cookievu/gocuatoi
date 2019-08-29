@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>developer on Blog&#39;s Vũ</title>
+    <link>https://gocuatoi.com/tags/developer/</link>
+    <description>Recent content in developer on Blog&#39;s Vũ</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>&amp;copy; 2019 Vũ</copyright>
+    <lastBuildDate>Thu, 29 Aug 2019 09:14:42 +0700</lastBuildDate>
+    
+	<atom:link href="https://gocuatoi.com/tags/developer/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Developer From Scratch - Part 1</title>
+      <link>https://gocuatoi.com/post/developer-from-scratch/</link>
+      <pubDate>Thu, 29 Aug 2019 09:14:42 +0700</pubDate>
+      
+      <guid>https://gocuatoi.com/post/developer-from-scratch/</guid>
+      <description>Mình là một tên developer khá là -:vãi:- và nay mình sẽ viết bài hướng dẫn làm thế nào để có thể trở thành một developer.
+Bài viết này mang tính vui vẻ, đọc vui là chính nhưng có thể sử dụng để tham khảo. Dành cho tất cả mọi người, bất cứ ai đều có ý định sẽ trở thành một developer.
+Để trở thành một developer bạn cần gi?</description>
+    </item>
+    
+  </channel>
+</rss>

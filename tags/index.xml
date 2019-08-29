@@ -1,15 +1,33 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on Góc của tôi</title>
+    <title>Tags on Blog&#39;s Vũ</title>
     <link>https://gocuatoi.com/tags/</link>
-    <description>Recent content in Tags on Góc của tôi</description>
+    <description>Recent content in Tags on Blog&#39;s Vũ</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>&amp;copy; 2019 Vũ</copyright>
-    <lastBuildDate>Wed, 28 Aug 2019 21:31:15 +0700</lastBuildDate>
+    <lastBuildDate>Thu, 29 Aug 2019 09:14:42 +0700</lastBuildDate>
     
 	<atom:link href="https://gocuatoi.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>developer</title>
+      <link>https://gocuatoi.com/tags/developer/</link>
+      <pubDate>Thu, 29 Aug 2019 09:14:42 +0700</pubDate>
+      
+      <guid>https://gocuatoi.com/tags/developer/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>from-scratch</title>
+      <link>https://gocuatoi.com/tags/from-scratch/</link>
+      <pubDate>Thu, 29 Aug 2019 09:14:42 +0700</pubDate>
+      
+      <guid>https://gocuatoi.com/tags/from-scratch/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>lucid-dream</title>
