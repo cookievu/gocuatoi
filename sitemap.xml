@@ -3,21 +3,6 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://gocuatoi.com/post/</loc>
-    <lastmod>2019-08-30T13:29:56+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://gocuatoi.com/post/vi-sao-toi-rua-toi/</loc>
-    <lastmod>2019-08-30T13:29:56+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://gocuatoi.com/</loc>
-    <lastmod>2019-08-30T13:29:56+07:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://gocuatoi.com/tags/developer/</loc>
     <lastmod>2019-08-30T08:38:24+07:00</lastmod>
   </url>
@@ -33,12 +18,22 @@
   </url>
   
   <url>
+    <loc>https://gocuatoi.com/post/</loc>
+    <lastmod>2019-08-30T08:38:24+07:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://gocuatoi.com/tags/</loc>
     <lastmod>2019-08-30T08:38:24+07:00</lastmod>
   </url>
   
   <url>
     <loc>https://gocuatoi.com/post/tao-blog-ca-nhan-voi-github-pages-va-gohugo/</loc>
+    <lastmod>2019-08-30T08:38:24+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://gocuatoi.com/</loc>
     <lastmod>2019-08-30T08:38:24+07:00</lastmod>
   </url>
   
