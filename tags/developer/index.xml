@@ -6,10 +6,20 @@
     <description>Recent content in developer on Vũ&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>&amp;copy; 2019 Vũ</copyright>
-    <lastBuildDate>Thu, 29 Aug 2019 09:14:42 +0700</lastBuildDate>
+    <lastBuildDate>Fri, 30 Aug 2019 08:38:24 +0700</lastBuildDate>
     
 	<atom:link href="https://gocuatoi.com/tags/developer/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Tạo blog cá nhân với Github Pages và Hugo</title>
+      <link>https://gocuatoi.com/post/tao-blog-ca-nhan-voi-github-pages-va-gohugo/</link>
+      <pubDate>Fri, 30 Aug 2019 08:38:24 +0700</pubDate>
+      
+      <guid>https://gocuatoi.com/post/tao-blog-ca-nhan-voi-github-pages-va-gohugo/</guid>
+      <description>Bạn muốn có một trang blog cá nhân để chia sẻ kiến thức, kinh nghiệm và mọi niềm vui buồn trong cuộc sống. Trên internet hiện có rất rất nhiều cách để tạo ra một trang blog đơn giản và miễn phí. Trong bài viết này mình sẽ hướng dẫn cách tạo một trang blog cá nhân bằng Github Pages và Hugo.
+Github Pages và Hugo là gì ?</description>
+    </item>
     
     <item>
       <title>Developer From Scratch - Part 1</title>
