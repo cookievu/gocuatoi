@@ -6,10 +6,19 @@
     <description>Recent content in Post on Vũ&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>&amp;copy; 2019 Vũ</copyright>
-    <lastBuildDate>Fri, 30 Aug 2019 08:38:24 +0700</lastBuildDate>
+    <lastBuildDate>Fri, 30 Aug 2019 13:29:56 +0700</lastBuildDate>
     
 	<atom:link href="https://gocuatoi.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Vì sao tôi rửa tội</title>
+      <link>https://gocuatoi.com/post/vi-sao-toi-rua-toi/</link>
+      <pubDate>Fri, 30 Aug 2019 13:29:56 +0700</pubDate>
+      
+      <guid>https://gocuatoi.com/post/vi-sao-toi-rua-toi/</guid>
+      <description>Trong một đời người có lẽ ai cũng sẽ phải một lần đi qua bước ngoặt của cuộc đời. Bước qua nó, bản thân sẽ trở thành một con người mới hoàn toàn khác lạ với con người trước đó. Bước ngoặt có thề làm con người trở nên xấu đi nhưng cũng có thể làm con người tốt hơn. Với tôi, bản thân tôi đã dần hoàn thiện hơn, hướng tới khi trải qua bước ngoặt đó.</description>
+    </item>
     
     <item>
       <title>Tạo blog cá nhân với Github Pages và Hugo</title>
