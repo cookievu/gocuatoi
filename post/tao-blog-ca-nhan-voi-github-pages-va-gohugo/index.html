@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="vi">
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="generator" content="Hugo 0.57.2" />
+		<title>Tạo blog cá nhân với Github Pages và Hugo - Vũ&#39;s Blog</title>
+
+		<meta name="description" content="Bạn muốn có một trang blog cá nhân để chia sẻ kiến thức, kinh nghiệm và mọi niềm vui buồn trong cuộc sống. Trên internet hiện có rất rất nhiều cách để tạo ra một trang blog đơn giản và miễn phí. Trong bài viết này mình sẽ hướng dẫn cách tạo một trang blog cá nhân bằng Github Pages và Hugo.
+Github Pages và Hugo là gì ?">
+
+		<meta property="og:title" content="Tạo blog cá nhân với Github Pages và Hugo" />
+<meta property="og:description" content="Bạn muốn có một trang blog cá nhân để chia sẻ kiến thức, kinh nghiệm và mọi niềm vui buồn trong cuộc sống. Trên internet hiện có rất rất nhiều cách để tạo ra một trang blog đơn giản và miễn phí. Trong bài viết này mình sẽ hướng dẫn cách tạo một trang blog cá nhân bằng Github Pages và Hugo.
+Github Pages và Hugo là gì ?" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://gocuatoi.com/post/tao-blog-ca-nhan-voi-github-pages-va-gohugo/" />
+
+<meta property="og:image" content="https://gocuatoi.com/hugo-mantis-theme-cover.jpg" />
+<meta property="article:published_time" content="2019-08-30T08:38:24+07:00" />
+<meta property="article:modified_time" content="2019-08-30T08:38:24+07:00" />
+
+		<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://gocuatoi.com/hugo-mantis-theme-cover.jpg"/>
+
+<meta name="twitter:title" content="Tạo blog cá nhân với Github Pages và Hugo"/>
+<meta name="twitter:description" content="Bạn muốn có một trang blog cá nhân để chia sẻ kiến thức, kinh nghiệm và mọi niềm vui buồn trong cuộc sống. Trên internet hiện có rất rất nhiều cách để tạo ra một trang blog đơn giản và miễn phí. Trong bài viết này mình sẽ hướng dẫn cách tạo một trang blog cá nhân bằng Github Pages và Hugo.
+Github Pages và Hugo là gì ?"/>
+
+
+		
+		<link rel="shortcut icon" href="/img/favicon.png">
+		
+	
+		
+
+
+
+
+<link rel="stylesheet" href="/css/ui.css">
+
+	
+		
+		<link rel="stylesheet" href="/css/custom.css"/>
+		
+
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400|Space+Mono:300,400&display=swap&subset=vietnamese" rel="stylesheet">
+
+		
+		<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/dracula.min.css">
+		<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+		
+		<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/languages/css.min.js"></script>
+		
+		<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/languages/javascript.min.js"></script>
+		
+		<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/languages/html.min.js"></script>
+		
+		
+	</head>
+
+<body>
+<header class="container no-print">
+	<div class="u-header">
+		<nav class="bar">
+	<ul><li>
+			<a href="/">
+				<img class="icon-text" src="/img/prev.svg"/>
+			</a>
+		</li><li><a href="/about">About </a></li><li><a href="/post/">Posts</a></li></ul>
+</nav>
+
+	</div>
+</header>
+<main class="container">
+
+<article>
+	<header><hgroup id="brand">
+	<h1>Tạo blog cá nhân với Github Pages và Hugo</h1>
+	<h5>
+		
+		<time datetime="2019-08-30 08:38:24 &#43;0700 &#43;07">Aug 30, 2019</time>
+		<span class="no-print">
+			-
+				
+				<a href="/tags/github">github</a>
+				
+				<a href="/tags/hugo">hugo</a>
+				<span>
+	</h5>
+	
+</hgroup>
+<hr class="sep" />
+</header>
+	
+
+<p><img src="/img/hugo-mantis-theme-cover.jpg" alt="hugo-mantis-theme-cover" /></p>
+
+<p>Bạn muốn có một trang blog cá nhân để chia sẻ kiến thức, kinh nghiệm và mọi niềm vui buồn trong cuộc sống. Trên internet hiện có rất rất nhiều cách để tạo ra một trang blog đơn giản và miễn phí. Trong bài viết này mình sẽ hướng dẫn cách tạo một trang blog cá nhân bằng <a href="https://pages.github.com">Github Pages</a> và <a href="https://gohugo.io">Hugo</a>.</p>
+
+<p><strong>Github Pages</strong> và <strong>Hugo</strong> là gì ?</p>
+
+<ul>
+<li><strong>Github Pages</strong> là dịch vụ lưu trữ wesite trực tiếp thông qua <strong>Github</strong>.</li>
+<li><strong>Hugo</strong> là một trình tạo trang tĩnh nhanh và hiện đại được viết bằng Go và được thiết kế để tạo trang web nhanh tróng và vui vẻ.</li>
+</ul>
+
+<p>Nói ngắn gọn thì ta sẽ sử dụng <strong>Hugo</strong> để tạo ra một trang web tĩnh, sau đó đẩy nó lên <strong>Github</strong> và cấu hình để cho chạy như là một trang web.</p>
+
+<p>Lưu ý:</p>
+
+<ul>
+<li>ở bài viết này mình sử dụng macOS để hướng dẫn nhé. Các hệ điều hành khác cũng tương tự. Xem thêm ở <a href="https://gohugo.io/getting-started/installing/">đây</a>.</li>
+<li>Để thực hiện được những bước dưới đây bạn cũng cần phải có một chút kiến thức về website, dòng lệnh và git nhé.</li>
+</ul>
+
+<h1 id="cài-đặt-và-tạo-blog">Cài đặt và tạo blog</h1>
+
+<h2 id="bước-1-cài-đặt-hugo">Bước 1: Cài đặt Hugo</h2>
+
+<p><code>Homebrew</code>, Một trình quản lý gói cho <code>macOS</code>, có thể được cài đặt từ <a href="https://brew.sh/">brew.sh</a> . Xem <a href="https://gohugo.io/getting-started/installing">cài đặt</a> nếu bạn đang chạy Windows, v.v.</p>
+
+<pre><code>brew install hugo
+</code></pre>
+
+<p>Xác minh cài đặt:</p>
+
+<pre><code>hugo version
+</code></pre>
+
+<h2 id="bước-2-tạo-một-trang-mới">Bước 2: Tạo một trang mới</h2>
+
+<pre><code>hugo new site gocuatoi
+</code></pre>
+
+<p>Lệnh trên sẽ tạo một trang web Hugo mới với thư mục có tên là <code>gocuatoi</code></p>
+
+<h2 id="bước-3-thêm-một-chủ-đề-theme">Bước 3: Thêm một chủ đề (theme)</h2>
+
+<p>Xem <a href="https://themes.gohugo.io/">Themes.gohugo.io</a> và tìm ra một chủ đề bạn mà bạn muốn sử dụng nó cho blog của mình. Trong hước dẫn này sử dụng <a href="https://github.com/yursan9/manis-hugo-theme/">Manis Hugo Thene</a> đơn giản mà đẹp (đối với mình). Chủ đề này hiện đang được mình sử dụng cho chính trang blog này (có chỉnh sửa lại chút ít).</p>
+
+<pre><code>cd gocuatoi
+git init
+git submodule add https://github.com/yursan9/manis-hugo-theme themes/manis
+cp themes/manis/exampleSite/config.toml config.toml
+</code></pre>
+
+<h2 id="bước-4-tạo-bài-viết-đầu-tiên">Bước 4: Tạo bài viết đầu tiên</h2>
+
+<pre><code>hugo new post/bai-viet-dau-tien.md
+</code></pre>
+
+<p>Nó sẽ tạo ra một tệp markdown là <code>/content/post/bai-viet-dau-tien</code>. Nội dung tệp sẽ trông như thế này:</p>
+
+<pre><code>---
+title: &quot;Bai Viet Dau Tien&quot;
+date: 2019-08-30T08:38:24+07:00
+draft: true
+---
+</code></pre>
+
+<p>Giờ thì bạn có thể chỉnh sửa nội dung tệp nếu muốn.</p>
+
+<h2 id="bước-5-khởi-động-hugo-server">Bước 5: Khởi động Hugo Server</h2>
+
+<p>Chạy lệnh sau đây để khởi động Hugo Server trước khi viết bài:</p>
+
+<pre><code>hugo server -D
+</code></pre>
+
+<p>Kết quả sẽ trông như thế này:</p>
+
+<pre><code>                   | EN
++------------------+----+
+  Pages            | 10
+  Paginator pages  |  0
+  Non-page files   |  0
+  Static files     |  3
+  Processed images |  0
+  Aliases          |  1
+  Sitemaps         |  1
+  Cleaned          |  0
+
+Total in 11 ms
+Watching for changes in /Users/vu/gocuatoi/{content,data,layouts,static,themes}
+Watching for config changes in /Users/vu/gocuatoi/config.toml
+Environment: &quot;development&quot;
+Serving pages from memory
+Running in Fast Render Mode. For full rebuilds on change: hugo server --disableFastRender
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Press Ctrl+C to stop
+</code></pre>
+
+<p>Đi đến trang web mới của bạn tại <a href="http://localhost:1313">http://localhost:1313</a>.
+Giò bạn có thể thoải mái chỉnh sửa nội dung của bạn và xem kết quả ngay trực tiếp trên trình duyệt. Khi bạn sửa thì trình duyệt sẽ tự động làm mới trang để cập nhật nội dung bài viết.</p>
+
+<h2 id="bước-6-cá-nhân-hóa">Bước 6: Cá nhân hóa</h2>
+
+<p>Cần phải chỉnh sửa một chút đề cá nhân hóa web.
+Mở tệp <code>config.toml</code> và cập nhật những trường sau:</p>
+
+<pre><code>baseURL = &quot;https://example.com/&quot;
+languageCode = &quot;vi-vn&quot;
+title = &quot;Blog cá nhân của tôi&quot;
+theme = &quot;manis&quot;
+</code></pre>
+
+<p>Thay thế title ở trên với tiêu đề mà bạn muốn. Ngoài ra, nếu bạn đã có sẵn một tên miền, hãy đặt baseURL. Lưu ý rằng giá trị này là không cần thiết khi chạy Hugo Server khi viết bài dưới local.</p>
+
+<p>Để biết các tùy chọn cấu hình cụ thể của chủ đề, xem <a href="https://github.com/budparr/gohugo-theme-ananke">trang web chủ đề</a>.</p>
+
+<h2 id="bước-7-xây-dựng-trang-tĩnh">Bước 7: Xây dựng trang tĩnh</h2>
+
+<p>Đơn giản chỉ cần chạy lệnh:</p>
+
+<pre><code>hugo
+</code></pre>
+
+<p>Trang web cùa bạn sẽ được đặt ở thư mục <code>/public</code>
+Giờ bạn có thể upload toàn bộ tệp trong thư mục <code>/public</code> lên bất cứ hosting nào để chạy trang web của bạn.</p>
+
+<p>Ok. Đã chuẩn bị xong trang tĩnh, giờ sẽ qua bước đưa web của bạn lên internet để người khác có thể truy cập được.</p>
+
+<h1 id="deploy-lên-github-pages">Deploy lên Github Pages</h1>
+
+<h2 id="bước-1-tạo-github-respository">Bước 1: Tạo Github Respository</h2>
+
+<p>Truy cập vào <a href="https://github.com/new">đây</a> để tạo một respository mới với tên là <code>gocuatoi.github.io</code>. Lưu ý đây sẽ là tên miền tuy cập trang web của bạn.</p>
+
+<h2 id="bước-2-push-source-lên-github">Bước 2: Push source lên Github</h2>
+
+<pre><code>cd gocuatoi/public
+git init
+git add .
+git commit -m &quot;Bai viet dau tien&quot;
+git remote add origin &quot;REMOTE_RESPOSITORY_URL&quot;
+git push -u origin master
+</code></pre>
+
+<p>Lưu ý: nhớ thay <code>REMOTE_RESPOSITORY_URL</code> bằng địa chỉ repo của bạn.</p>
+
+<h2 id="bước-3-thưởng-thức">Bước 3: Thưởng thức</h2>
+
+<p>Tới đây là đã hoàn tất rồi, bạn có thể truy cập vô web của bạn và thưởng thức. Ở đây thì địa chỉ web của mình là <code>https://gocuatoi.github.io</code>.</p>
+
+<h1 id="linh-tinh">Linh tinh</h1>
+
+<h2 id="tên-miền-tùy-chỉnh">Tên miền tùy chỉnh</h2>
+
+<p>Nếu bạn không thích tên miền name.github.io thì có thể sử dụng tên miền tùy chỉnh của bạn ví dụ như <code>gocuatoi.com</code> thì bạn có thể truy cập vào <a href="https://help.github.com/articles/using-a-custom-domain-with-github-pages/">đây</a> để thêm tên miền của bạn.</p>
+
+<h2 id="triển-khai-nhanh">Triển khai nhanh</h2>
+
+<p>Bình thường là cứ mỗi lần bạn có thêm hay cập nhật bài viết thì thường bải lặp lại các bước như build rồi commit như vậy sẽ rất nhàm chán.
+Vậy nên bạn sẽ cần đoạn script này để có thể chỉ cẩn &ldquo;Enter&rdquo; một phát là xong luôn.</p>
+
+<p>Tệp <code>deploy.sh</code>:</p>
+
+<pre><code>#!/bin/sh
+
+# If a command fails then the deploy stops
+set -e
+
+printf &quot;\033[0;32mDeploying updates to GitHub...\033[0m\n&quot;
+
+# Build the project.
+hugo # if using a theme, replace with `hugo -t &lt;YOURTHEME&gt;`
+
+# Go To Public folder
+cd public
+
+# Add changes to git.
+git add .
+
+# Commit changes.
+msg=&quot;rebuilding site $(date)&quot;
+if [ -n &quot;$*&quot; ]; then
+    msg=&quot;$*&quot;
+fi
+git commit -m &quot;$msg&quot;
+
+# Push source and build repos.
+git push origin master
+</code></pre>
+
+<p>Lưu tệp ở thu mục gốc của thư mục web Hugo. Và chạy lệnh sau</p>
+
+<pre><code>chmod +x deploy.sh
+</code></pre>
+
+<p>Ok. Cứ mỗi lần thêm bài mới hay thay đổi gì chỉ cần chạy lệnh sau là nó sẽ tự động làm mọi thứ cho bạn.</p>
+
+<pre><code>./deploy.sh
+</code></pre>
+
+<h1 id="tổng-kết">Tổng kết</h1>
+
+<p>Cũng khá là đơn giản để tạo một trang blog đúng không. Hy vọng bài viết này sẽ hữu ích đối với mọi người.</p>
+
+</article>
+<nav class="no-print post-nav">
+
+	<a class="prev-post" href="https://gocuatoi.com/post/developer-from-scratch/">
+		<img class="icon-text" src="/img/prev.svg"/>Developer From Scratch - Part 1</a>
+
+
+</nav>
+
+
+
+
+	<div id="disqus_thread" class="no-print"></div>
+<script type="text/javascript">
+
+(function() {
+    
+    
+    if (window.location.hostname == "localhost")
+        return;
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    var disqus_shortname = 'gocuatoi';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+			<hr class="sep" />
+		</main>
+
+		
+		<footer class="container no-print">
+			<div class="u-footer">
+				
+<a href="mailto:tuanvu0995@gmail.com"><img class="icon-social" src="/img/email.svg" alt="Email Me!"/></a>
+
+
+<a href="https://github.com/cookievu"><img class="icon-social" src="/img/github.svg" alt="Github"/></a>
+
+
+<a href="https://twitter.com/laituanvu"><img class="icon-social" src="/img/twitter.svg" alt="Twitter"/></a>
+
+<a href="https://gocuatoi.com/index.xml" target="_blank"><img class="icon-social" src="/img/feed.svg" alt="Feed"></a>
+
+				<p>
+					
+					
+					&copy; 2019 Vũ
+					
+					
+					| <a href="/about/license">License</a>
+					
+				</p>
+				
+				<a href="#brand">
+					<img class="icon-text" src="/img/toup.svg" alt="To Up"/>
+					<span>Back to Up</span>
+				</a>
+				
+			</div>
+		</footer>
+		
+		<script>hljs.initHighlightingOnLoad();</script>
+		
+
+		
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-140402812-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+	</body>
+</html>
+
