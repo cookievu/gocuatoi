@@ -95,7 +95,7 @@
 
 <p>Không, đây chỉ là một đối tượng (object) được lưu trong bộ nhớ cache - và một đối tượng không được bảo đảm sẽ được sử dụng lại trên tất cả các tệp yêu cầu nó.</p>
 
-<h2 id="vấn-đề-với-require">Vấn đề với require</h2>
+<h1 id="vấn-đề-với-require">Vấn đề với require</h1>
 
 <p>Khi bạn gọi hàm &ldquo;require&rdquo; trong Node, nó sử dụng đường dẫn của tệp được require làm khóa bộ đệm. Nếu bạn require cùng một tệp từ nhiều tệp khác, bạn thường nhận được cùng một bản sao lưu của module được trả lại cho bạn.</p>
 
@@ -108,7 +108,7 @@
 <li>NPM Module Dependencies: khi một module khác cài đặt giống với module từ NPM</li>
 </ul>
 
-<h2 id="case-sensitivity">Case Sensitivity</h2>
+<h1 id="case-sensitivity">Case Sensitivity</h1>
 
 <p>Windows và macOS (theo mặc định) không phân biệt chữ hoa chữ thường trên hệ thống tệp. Bạn có thể tìm một tệp có tên là foo.js, và một tệp có tên là FOO.js và cả hai tìm kiếm này sẽ tìm thấy cùng một tệp trong cùng một thư mục, bất kể tên của tên tệp thực tế là hoa hay thường. Nhưng, chúng tôi không thể có hai tệp khác nhau trên macOS hoặc Windows: foo.js và FOO.js. Windows và macOS sẽ không cho phép điều đó.</p>
 
@@ -155,7 +155,7 @@
 
 <p>Mặc dù nói chung là luôn luôn có vỏ đúng, nhưng không phải lúc nào cũng xảy ra. Kết quả là một bộ đệm module bị hỏng trên các hệ thống tệp không phân việt chữ hoa và chữ thường.</p>
 
-<h2 id="npm-module-dependencies">NPM Module Dependencies</h2>
+<h1 id="npm-module-dependencies">NPM Module Dependencies</h1>
 
 <p>Một tình huống khác trong đó bộ đệm module sẽ không hoạt động là khi bạn cài đặt cùng một module như một dependency của hai hoặc nhiều module từ NPM.</p>
 
@@ -165,7 +165,7 @@
 
 <p>Tuy nhiên, nếu Foo và Bar phụ thuộc vào các phiên bản Quux khác nhau / không tương thích, nó vẫn sẽ cài đặt cả hai phiên bản. Foo và Bar sẽ không chia sẻ bộ đệm mô-đun trong trường hợp này.</p>
 
-<h2 id="make-it-cache-buster-proof">Make It Cache-Buster-Proof</h2>
+<h1 id="make-it-cache-buster-proof">Make It Cache-Buster-Proof</h1>
 
 <p>Nếu gọi hàm require trong Node không tạo ra một singleton thực sự, nhưng thay vào đó là một module được lưu trong bộ nhớ cache, làm thế nào có thể tạo một singleton thực sự?</p>
 
@@ -189,7 +189,7 @@
 </code></pre></div>
 <p>Mặc dù có những tác động nguy hiểm nghiêm trọng của việc sử dụng biến toàn cục, bao gồm cả JSHint phàn nàn về việc thiếu định nghĩa cho &ldquo;foo&rdquo;, trong trường hợp này, có thể tạo ra một singleton thực sự trong Node bằng kỹ thuật này và thực hiện một cách an toàn, sử dụng các ký hiệu ES6.</p>
 
-<h2 id="the-core-of-a-true-singleton">The Core Of A True Singleton</h2>
+<h1 id="the-core-of-a-true-singleton">The Core Of A True Singleton</h1>
 
 <p>Có một biến toàn cầu như là &ldquo;foo&rdquo;, nó rất nguy hiểm vì nhiều lý do. Toàn bộ cộng đồng JavaScript đã chuyển sang sử dụng các module để ngăn chặn rất nhiều vấn đề mà toàn cầu gây ra.</p>
 
@@ -249,7 +249,7 @@
 </code></pre></div>
 <p>Đây là cùng một đầu ra đã được hiển thị với tên tệp không nhất quán trước đó. Chúng ta hãy sửa nó và NPM Module đang tải ngay bây giờ.</p>
 
-<h2 id="creating-the-true-singleton">Creating The True Singleton</h2>
+<h1 id="creating-the-true-singleton">Creating The True Singleton</h1>
 
 <p>Phần cuối cùng của bài viết là cách tạo ra singleton thực sự, là để đảm bảo rằng bất kỳ phiên bản nào của tệp được tải sẽ không ghi đè lên global symbol. Thật không may, có một vấn đề với cách symbol hiện tại. Mỗi khi tệp được tải, một thể hiện mới của symbol được tạo.</p>
 
@@ -307,7 +307,7 @@
   <span class="s2">&#34;foo&#34;</span><span class="o">:</span> <span class="s2">&#34;something different&#34;</span>
 <span class="p">}</span>
 </code></pre></div>
-<h2 id="a-true-singleton-but-at-what-cost">A True Singleton… But At What Cost?</h2>
+<h1 id="a-true-singleton-but-at-what-cost">A True Singleton… But At What Cost?</h1>
 
 <p>Với ES6 Symbols, giờ đây bạn đã có một singleton thực sự tương đối an toàn. Bạn có thể yêu cầu cùng một tệp từ nhiều nơi, vô tình trộn tên tệp và thậm chí require tệp đó từ nhiều trường hợp NPM Dependencies. Kết quả sẽ luôn là một thể hiện đối tượng duy nhất.</p>
 
@@ -319,7 +319,7 @@
 
 <p>Ngoài ra, trường hợp đơn lẻ này không thực sự an toàn. Với việc sử dụng global symbol, có khả năng người khác đang cố gắng sử dụng symbol tương tự cho mục đích khác. Điều này rất khó xảy ra, nhưng vẫn là một khả năng, nhưng bạn có thể yên tâm rằng đó sẽ là một vấn đề thực sự đối với ai đó, ở đâu đó.</p>
 
-<h2 id="the-cost-benefit-analysis-of-both-methods">The Cost-Benefit Analysis Of Both Methods</h2>
+<h1 id="the-cost-benefit-analysis-of-both-methods">The Cost-Benefit Analysis Of Both Methods</h1>
 
 <p>Mặc dù đúng là một việc gọi require đơn giản trong Node.js sẽ cung cấp xuất bộ nhớ cache, với điều kiện các câu lệnh require và version là tương thích, đối tượng này là một bản fax kém của một singleton.</p>
 
