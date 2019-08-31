@@ -27,7 +27,7 @@
 		
 		<link rel="shortcut icon" href="/img/favicon.png">
 		
-	
+
 		
 
 
@@ -35,12 +35,12 @@
 
 <link rel="stylesheet" href="/css/ui.css">
 
-	
+
 		
 		<link rel="stylesheet" href="/css/custom.css"/>
 		
 
-		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400|Space+Mono:300,400&display=swap&subset=vietnamese" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600|Space+Mono:400,700&display=swap&subset=vietnamese" rel="stylesheet">
 
 		
 		<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/dracula.min.css">
@@ -70,8 +70,11 @@
 </header>
 <main class="container">
 
+<progress id="reading-progress" class="progress" value="0">
+    <span class="progress-bar"></span>
+</progress>
 <article>
-	<header><hgroup id="brand">
+    <header><hgroup id="brand">
 	<h1>Singleton trong NodeJs</h1>
 	<h5>
 		
@@ -88,7 +91,7 @@
 </hgroup>
 <hr class="sep" />
 </header>
-	
+    
 
 <p>Trong NodeJS, người ta thường sử dụng module. Rất nhiều người gọi đây <a href="https://en.wikipedia.org/wiki/Singleton_pattern">singleton pattern</a> của Node.js, nhưng đây không thực sự là singleton.</p>
 
@@ -335,21 +338,24 @@
 <p>Link bài gốc: <a href="https://derickbailey.com/2016/03/09/creating-a-true-singleton-in-node-js-with-es6-symbols/">https://derickbailey.com/2016/03/09/creating-a-true-singleton-in-node-js-with-es6-symbols/</a></p>
 
 </article>
+<ul id="content-sidebar" class="sidebar">
+
+</ul>
 <nav class="no-print post-nav">
-
-	<a class="prev-post" href="https://gocuatoi.com/post/tin-nhan-ngay-thu-nam/">
-		<img class="icon-text" src="/img/prev.svg"/>Tin nhắn ngày thứ năm</a>
-
-
-	<a class="next-post" href="https://gocuatoi.com/post/lucid-dream-hoc-khi-dang-ngu/">Lucid Dream - Học khi đang ngủ<img class="icon-text" src="/img/next.svg"/>
-	</a>
-
+    
+    <a class="prev-post" href="https://gocuatoi.com/post/tin-nhan-ngay-thu-nam/">
+        <img class="icon-text" src="/img/prev.svg"/>Tin nhắn ngày thứ năm</a>
+    
+    
+    <a class="next-post" href="https://gocuatoi.com/post/lucid-dream-hoc-khi-dang-ngu/">Lucid Dream - Học khi đang ngủ<img class="icon-text" src="/img/next.svg"/>
+    </a>
+    
 </nav>
 
 
 
 
-	<div id="disqus_thread" class="no-print"></div>
+<div id="disqus_thread" class="no-print"></div>
 <script type="text/javascript">
 
 (function() {
@@ -370,7 +376,7 @@
 			<hr class="sep" />
 		</main>
 
-		
+
 		<footer class="container no-print">
 			<div class="u-footer">
 				
@@ -403,6 +409,8 @@
 		</footer>
 		
 		<script>hljs.initHighlightingOnLoad();</script>
+			<script src="/js/jquery-3.4.1.min.js"></script>
+			<script src="/js/custom.js"></script>
 		
 
 		

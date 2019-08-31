@@ -1,4 +1,127 @@
+body {
+    font-family: open sans, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: space mono, monospace;
+    font-weight: 700;
+}
+
+h1 {
+    font-size: 2.5rem;
+    line-height: 1.75;
+    letter-spacing: -.1rem;
+}
+
+h2 {
+    font-size: 2.1rem;
+    line-height: 1.25;
+    letter-spacing: -.1rem;
+}
+
+h3 {
+    font-size: 1.8rem;
+    line-height: 1.3;
+    letter-spacing: -.1rem;
+}
+
+h4 {
+    font-size: 1.5rem;
+    line-height: 1.35;
+    letter-spacing: -.08rem;
+}
+
+h5 {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    letter-spacing: -.05rem;
+}
+
+h6 {
+    font-size: 1.6rem;
+    line-height: 1.6;
+    letter-spacing: 0;
+}
+
+/**
+Component
+ */
 .icon-social {
-  width: 2rem;
-  height: 2rem;
+    width: 2rem;
+    height: 2rem;
+}
+
+.sidebar {
+    display: none;
+    position: fixed;
+    top: 20%;
+    list-style-type: decimal;
+    transition: .5s;
+    opacity: 0.2;
+    max-width: 280px;
+    transform: translateX(70rem);
+}
+
+.sidebar:hover {
+    opacity: 1;
+}
+
+.sidebar li a {
+    color: #333;
+    font-family: space mono, monospace;
+    font-size: 0.9em;
+}
+
+.progress {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 2px;
+  background: transparent;
+  border: none;
+  display: flex;
+  border-radius: 0;
+  color: #008800;
+  -webkit-appearance: none;
+}
+
+.progress::-webkit-progress-bar {
+  background-color: transparent;
+}
+
+.progress::-webkit-progress-value {
+  background-color: #ff6565;
+}
+
+.progress::-moz-progress-bar {
+  background-color: #ff6565;
+}
+
+.progress-bar {
+  display: block;
+  width: 50%;
+  height: inherit;
+  background-color: #ff6565;
+}
+
+/**
+Responsive
+ */
+@media (min-width: 640px) {
+
+}
+
+@media (min-width: 768px) {
+
+}
+
+@media (min-width: 1024px) {
+    .sidebar {
+        display: block;
+    }
+}
+
+@media (min-width: 1200px) {
+
 }

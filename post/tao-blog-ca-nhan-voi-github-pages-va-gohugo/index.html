@@ -30,7 +30,7 @@ Github Pages và Hugo là gì ?"/>
 		
 		<link rel="shortcut icon" href="/img/favicon.png">
 		
-	
+
 		
 
 
@@ -38,12 +38,12 @@ Github Pages và Hugo là gì ?"/>
 
 <link rel="stylesheet" href="/css/ui.css">
 
-	
+
 		
 		<link rel="stylesheet" href="/css/custom.css"/>
 		
 
-		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400|Space+Mono:300,400&display=swap&subset=vietnamese" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600|Space+Mono:400,700&display=swap&subset=vietnamese" rel="stylesheet">
 
 		
 		<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/dracula.min.css">
@@ -73,8 +73,11 @@ Github Pages và Hugo là gì ?"/>
 </header>
 <main class="container">
 
+<progress id="reading-progress" class="progress" value="0">
+    <span class="progress-bar"></span>
+</progress>
 <article>
-	<header><hgroup id="brand">
+    <header><hgroup id="brand">
 	<h1>Tạo blog cá nhân với Github Pages và Hugo</h1>
 	<h5>
 		
@@ -93,7 +96,7 @@ Github Pages và Hugo là gì ?"/>
 </hgroup>
 <hr class="sep" />
 </header>
-	
+    
 
 <p><img src="/img/hugo-mantis-theme-cover.jpg" alt="hugo-mantis-theme-cover" /></p>
 
@@ -299,12 +302,15 @@ git push origin master
 <p>Cũng khá là đơn giản để tạo một trang blog đúng không. Hy vọng bài viết này sẽ hữu ích đối với mọi người.</p>
 
 </article>
+<ul id="content-sidebar" class="sidebar">
+
+</ul>
 <nav class="no-print post-nav">
-
-	<a class="prev-post" href="https://gocuatoi.com/post/developer-from-scratch/">
-		<img class="icon-text" src="/img/prev.svg"/>Developer From Scratch - Part 1</a>
-
-
+    
+    <a class="prev-post" href="https://gocuatoi.com/post/developer-from-scratch/">
+        <img class="icon-text" src="/img/prev.svg"/>Developer From Scratch - Part 1</a>
+    
+    
 </nav>
 
 
@@ -319,7 +325,7 @@ git push origin master
 
 
 
-	<div id="disqus_thread" class="no-print"></div>
+<div id="disqus_thread" class="no-print"></div>
 <script type="text/javascript">
 
 (function() {
@@ -340,7 +346,7 @@ git push origin master
 			<hr class="sep" />
 		</main>
 
-		
+
 		<footer class="container no-print">
 			<div class="u-footer">
 				
@@ -373,6 +379,8 @@ git push origin master
 		</footer>
 		
 		<script>hljs.initHighlightingOnLoad();</script>
+			<script src="/js/jquery-3.4.1.min.js"></script>
+			<script src="/js/custom.js"></script>
 		
 
 		

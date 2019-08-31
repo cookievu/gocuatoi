@@ -23,7 +23,7 @@
 		
 		<link rel="shortcut icon" href="/img/favicon.png">
 		
-	
+
 		
 
 
@@ -31,12 +31,12 @@
 
 <link rel="stylesheet" href="/css/ui.css">
 
-	
+
 		
 		<link rel="stylesheet" href="/css/custom.css"/>
 		
 
-		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400|Space+Mono:300,400&display=swap&subset=vietnamese" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600|Space+Mono:400,700&display=swap&subset=vietnamese" rel="stylesheet">
 
 		
 		<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/dracula.min.css">
@@ -66,8 +66,11 @@
 </header>
 <main class="container">
 
+<progress id="reading-progress" class="progress" value="0">
+    <span class="progress-bar"></span>
+</progress>
 <article>
-	<header><hgroup id="brand">
+    <header><hgroup id="brand">
 	<h1>License</h1>
 	<h5>
 		
@@ -79,16 +82,19 @@
 </hgroup>
 <hr class="sep" />
 </header>
-	
+    
 
 <h2 id="manis-hugo-theme">Manis Hugo Theme</h2>
 
 <p>Manis is licensed under the MIT License. Check the <a href="https://github.com/yursan9/manis-hugo-theme/blob/master/LICENSE.md">LICENSE</a> file for details.</p>
 
 </article>
+<ul id="content-sidebar" class="sidebar">
+
+</ul>
 <nav class="no-print post-nav">
-
-
+    
+    
 </nav>
 
 
@@ -97,7 +103,7 @@
 			<hr class="sep" />
 		</main>
 
-		
+
 		<footer class="container no-print">
 			<div class="u-footer">
 				
@@ -130,6 +136,8 @@
 		</footer>
 		
 		<script>hljs.initHighlightingOnLoad();</script>
+			<script src="/js/jquery-3.4.1.min.js"></script>
+			<script src="/js/custom.js"></script>
 		
 
 		

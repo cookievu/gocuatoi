@@ -27,7 +27,7 @@
 		
 		<link rel="shortcut icon" href="/img/favicon.png">
 		
-	
+
 		
 
 
@@ -35,12 +35,12 @@
 
 <link rel="stylesheet" href="/css/ui.css">
 
-	
+
 		
 		<link rel="stylesheet" href="/css/custom.css"/>
 		
 
-		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400|Space+Mono:300,400&display=swap&subset=vietnamese" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600|Space+Mono:400,700&display=swap&subset=vietnamese" rel="stylesheet">
 
 		
 		<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/dracula.min.css">
@@ -70,8 +70,11 @@
 </header>
 <main class="container">
 
+<progress id="reading-progress" class="progress" value="0">
+    <span class="progress-bar"></span>
+</progress>
 <article>
-	<header><hgroup id="brand">
+    <header><hgroup id="brand">
 	<h1>Lucid Dream - Học khi đang ngủ</h1>
 	<h5>
 		
@@ -86,7 +89,7 @@
 </hgroup>
 <hr class="sep" />
 </header>
-	<p>Mới tình cờ tìm hiểu được một thứ hay ho về giấc mơ của con người. Nếu có cách nào hiểu tận gốc rễ và làm chủ khả năng này thì bản thân sẽ tiến tới được cột mốc khá là hay ho, cái này được gọi là <em>lucid dream</em>.</p>
+    <p>Mới tình cờ tìm hiểu được một thứ hay ho về giấc mơ của con người. Nếu có cách nào hiểu tận gốc rễ và làm chủ khả năng này thì bản thân sẽ tiến tới được cột mốc khá là hay ho, cái này được gọi là <em>lucid dream</em>.</p>
 
 <p>Lucid dream là một giấc mơ trong đó bạn nhận ra rằng bạn đang mơ. Bạn có thể có được một số quyền kiểm soát điều khiển được giấc mơ theo ý muốn và hơn hết là có thể nhớ lại toàn bộ trải nghiệm trong giấc mơ khi bạn thức dậy.</p>
 
@@ -107,21 +110,24 @@
 <p>Đọc xong bài này có ai nghĩ sẽ thử tìm cách vô lucid dream để &ldquo;trải nghiệm&rdquo; không? Thôi bỏ đi, nó impossible lắm =))</p>
 
 </article>
+<ul id="content-sidebar" class="sidebar">
+
+</ul>
 <nav class="no-print post-nav">
-
-	<a class="prev-post" href="https://gocuatoi.com/post/singleton-trong-nodejs/">
-		<img class="icon-text" src="/img/prev.svg"/>Singleton trong NodeJs</a>
-
-
-	<a class="next-post" href="https://gocuatoi.com/post/developer-from-scratch/">Developer From Scratch - Part 1<img class="icon-text" src="/img/next.svg"/>
-	</a>
-
+    
+    <a class="prev-post" href="https://gocuatoi.com/post/singleton-trong-nodejs/">
+        <img class="icon-text" src="/img/prev.svg"/>Singleton trong NodeJs</a>
+    
+    
+    <a class="next-post" href="https://gocuatoi.com/post/developer-from-scratch/">Developer From Scratch - Part 1<img class="icon-text" src="/img/next.svg"/>
+    </a>
+    
 </nav>
 
 
 
 
-	<div id="disqus_thread" class="no-print"></div>
+<div id="disqus_thread" class="no-print"></div>
 <script type="text/javascript">
 
 (function() {
@@ -142,7 +148,7 @@
 			<hr class="sep" />
 		</main>
 
-		
+
 		<footer class="container no-print">
 			<div class="u-footer">
 				
@@ -175,6 +181,8 @@
 		</footer>
 		
 		<script>hljs.initHighlightingOnLoad();</script>
+			<script src="/js/jquery-3.4.1.min.js"></script>
+			<script src="/js/custom.js"></script>
 		
 
 		

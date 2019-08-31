@@ -27,7 +27,7 @@
 		
 		<link rel="shortcut icon" href="/img/favicon.png">
 		
-	
+
 		
 
 
@@ -35,12 +35,12 @@
 
 <link rel="stylesheet" href="/css/ui.css">
 
-	
+
 		
 		<link rel="stylesheet" href="/css/custom.css"/>
 		
 
-		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400|Space+Mono:300,400&display=swap&subset=vietnamese" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600|Space+Mono:400,700&display=swap&subset=vietnamese" rel="stylesheet">
 
 		
 		<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/dracula.min.css">
@@ -70,8 +70,11 @@
 </header>
 <main class="container">
 
+<progress id="reading-progress" class="progress" value="0">
+    <span class="progress-bar"></span>
+</progress>
 <article>
-	<header><hgroup id="brand">
+    <header><hgroup id="brand">
 	<h1>Developer From Scratch - Part 1</h1>
 	<h5>
 		
@@ -88,7 +91,7 @@
 </hgroup>
 <hr class="sep" />
 </header>
-	
+    
 
 <p>Mình là một tên developer khá là -:vãi:- và nay mình sẽ viết bài hướng dẫn làm thế nào để có thể trở thành một developer.</p>
 
@@ -139,21 +142,24 @@
 <p>Trên đây là phần một,  nếu thấy hay thì hãy ghé đọc tiếp phần 2 tại <a href="https://gocuatoi.com">gocuatoi.com</a> nhé</p>
 
 </article>
+<ul id="content-sidebar" class="sidebar">
+
+</ul>
 <nav class="no-print post-nav">
-
-	<a class="prev-post" href="https://gocuatoi.com/post/lucid-dream-hoc-khi-dang-ngu/">
-		<img class="icon-text" src="/img/prev.svg"/>Lucid Dream - Học khi đang ngủ</a>
-
-
-	<a class="next-post" href="https://gocuatoi.com/post/tao-blog-ca-nhan-voi-github-pages-va-gohugo/">Tạo blog cá nhân với Github Pages và Hugo<img class="icon-text" src="/img/next.svg"/>
-	</a>
-
+    
+    <a class="prev-post" href="https://gocuatoi.com/post/lucid-dream-hoc-khi-dang-ngu/">
+        <img class="icon-text" src="/img/prev.svg"/>Lucid Dream - Học khi đang ngủ</a>
+    
+    
+    <a class="next-post" href="https://gocuatoi.com/post/tao-blog-ca-nhan-voi-github-pages-va-gohugo/">Tạo blog cá nhân với Github Pages và Hugo<img class="icon-text" src="/img/next.svg"/>
+    </a>
+    
 </nav>
 
 
 
 
-	<div id="disqus_thread" class="no-print"></div>
+<div id="disqus_thread" class="no-print"></div>
 <script type="text/javascript">
 
 (function() {
@@ -174,7 +180,7 @@
 			<hr class="sep" />
 		</main>
 
-		
+
 		<footer class="container no-print">
 			<div class="u-footer">
 				
@@ -207,6 +213,8 @@
 		</footer>
 		
 		<script>hljs.initHighlightingOnLoad();</script>
+			<script src="/js/jquery-3.4.1.min.js"></script>
+			<script src="/js/custom.js"></script>
 		
 
 		
