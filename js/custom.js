@@ -6,30 +6,36 @@ $(document).ready(function () {
         sidebar.append(` <li><a href="#${h1[i].id}">${h1[i].textContent}</a></li>`)
     }
 
-    // Progress bar
-    let lastScrollY = window.scrollY;
-    let lastWindowHeight = window.innerHeight;
-    let lastDocumentHeight = $(document).height();
-    const progressBar = document.querySelector('#reading-progress');
+    initProgress();
+});
 
-    function onScroll() {
-        lastScrollY = window.scrollY;
+function initProgress() {
+    const progressBar = document.querySelector('#reading-progress');
+    if (progressBar) {
+        // Progress bar
+        let lastScrollY = window.scrollY;
+        let lastWindowHeight = window.innerHeight;
+        let lastDocumentHeight = $(document).height();
+
+        function onScroll() {
+            lastScrollY = window.scrollY;
+            update();
+        }
+
+        function onResize() {
+            lastWindowHeight = window.innerHeight;
+            lastDocumentHeight = $(document).height();
+        }
+
+        function update() {
+            const progressMax = lastDocumentHeight - lastWindowHeight;
+            progressBar.setAttribute('max', progressMax);
+            progressBar.setAttribute('value', lastScrollY);
+        }
+
+        window.addEventListener('scroll', onScroll, {passive: true});
+        window.addEventListener('scroll', onResize);
+
         update();
     }
-
-    function onResize() {
-        lastWindowHeight = window.innerHeight;
-        lastDocumentHeight = $(document).height();
-    }
-
-    function update() {
-        const progressMax = lastDocumentHeight - lastWindowHeight;
-        progressBar.setAttribute('max', progressMax);
-        progressBar.setAttribute('value', lastScrollY);
-    }
-
-    window.addEventListener('scroll', onScroll, {passive: true});
-    window.addEventListener('scroll', onResize);
-
-    update();
-});
+}
