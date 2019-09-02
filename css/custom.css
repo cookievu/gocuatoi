@@ -54,13 +54,18 @@ Component
 .sidebar {
     display: none;
     position: fixed;
-    top: 20%;
+    top: 10%;
     list-style-type: decimal;
     transition: .5s;
     opacity: 0.2;
     max-width: 280px;
     transform: translateX(70rem);
 }
+
+.sidebar ul {
+    margin: 0 0 0 3px;
+}
+
 
 .sidebar:hover {
     opacity: 1;
