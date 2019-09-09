@@ -6,10 +6,20 @@
     <description>Recent content on Vũ&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>&amp;copy; 2019 Vũ</copyright>
-    <lastBuildDate>Sat, 31 Aug 2019 17:13:14 +0700</lastBuildDate>
+    <lastBuildDate>Sun, 08 Sep 2019 01:07:05 +0000</lastBuildDate>
     
 	<atom:link href="https://gocuatoi.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Vì sao tôi rửa tội</title>
+      <link>https://gocuatoi.com/post/vi-sao-toi-rua-toi/</link>
+      <pubDate>Sun, 08 Sep 2019 01:07:05 +0000</pubDate>
+      
+      <guid>https://gocuatoi.com/post/vi-sao-toi-rua-toi/</guid>
+      <description>Tôi một con người không có niềm tin vào tôn giáo, luôn tin rằng mọi thứ trên thế giới đều vận hành một cách tự nhiên mà không phải bị tác động từ một vị thánh thần nào cả.
+Trong một đời người có lẽ ai cũng sẽ phải một lần đi qua bước ngoặt của cuộc đời. Bước qua nó, bản thân sẽ trở thành một con người mới hoàn toàn khác lạ với con người trước đó.</description>
+    </item>
     
     <item>
       <title>Tản mạn chuyện ga lăng</title>
@@ -95,16 +105,6 @@ Bạn có mã bí mật? Hãy gửi nó đến đúng nơi xem được nhé :ki
       
       <guid>https://gocuatoi.com/about/license/</guid>
       <description>Manis Hugo Theme Manis is licensed under the MIT License. Check the LICENSE file for details.</description>
-    </item>
-    
-    <item>
-      <title>Vì sao tôi rửa tội</title>
-      <link>https://gocuatoi.com/post/vi-sao-toi-rua-toi/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://gocuatoi.com/post/vi-sao-toi-rua-toi/</guid>
-      <description>Tôi một con người không có niềm tin vào tôn giáo, luôn tin rằng mọi thứ trên thế giới đều vận hành một cách tự nhiên mà phải bị tác động từ một vị thánh thần nào cả.
-Trong một đời người có lẽ ai cũng sẽ phải một lần đi qua bước ngoặt của cuộc đời. Bước qua nó, bản thân sẽ trở thành một con người mới hoàn toàn khác lạ với con người trước đó.</description>
     </item>
     
   </channel>
