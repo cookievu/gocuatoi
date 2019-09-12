@@ -31,19 +31,16 @@ Github Pages và Hugo là gì ?"/>
 		<link rel="shortcut icon" href="/img/favicon.png">
 		
 
-		
-
-
-
-
-<link rel="stylesheet" href="/css/ui.css">
-
-
-		
-		<link rel="stylesheet" href="/css/custom.css"/>
-		
-
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600|Space+Mono:400,700&display=swap&subset=vietnamese" rel="stylesheet">
+		
+
+
+
+
+
+
+
+<link rel="stylesheet" href="https://gocuatoi.com/css/style.min.f9feaa3878d3cde5ef89168ff5c1c4b7b7e1169256b6c1536076527018df024f.css" integrity="sha256-&#43;f6qOHjTzeXviRaP9cHEt7fhFpJWtsFTYHZScBjfAk8="/>
 
 		
 		<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/dracula.min.css">
@@ -298,9 +295,7 @@ git push origin master
 <p>Cũng khá là đơn giản để tạo một trang blog đúng không. Hy vọng bài viết này sẽ hữu ích đối với mọi người.</p>
 
 </article>
-<ul id="content-sidebar" class="sidebar">
-
-</ul>
+<ul id="content-sidebar" class="sidebar"></ul>
 <nav class="no-print post-nav">
     
     <a class="prev-post" href="https://gocuatoi.com/post/developer-from-scratch/">
@@ -324,23 +319,25 @@ git push origin master
 
 
 
-<div id="disqus_thread" class="no-print"></div>
-<script type="text/javascript">
+<h3>Bình luận</h3>
+<ul id="comment" class="comment-list">
 
-(function() {
-    
-    
-    if (window.location.hostname == "localhost")
-        return;
+</ul>
+<div class="comment-box" style="display: none" id="commentBox">
+    <div id="my-avatar" class="my-avatar"></div>
+    <div class="comment-form">
+        <p style="margin: 0"><small>Bạn nghĩ bài viết này như thế nào?</small></p>
+        <textarea rows="3" style="width: 100%" placeholder="Nhập bình luận ở đây" id="comment-content"></textarea>
+        <button type="button" onclick="addComment()">Gửi bình luận</button>
 
-    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-    var disqus_shortname = 'gocuatoi';
-    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-})();
-</script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <small>Bình luận không thể xóa sau khi đăng</small>
 
+    </div>
+</div>
+<div class="login-box" id="loginBox">
+    <div><button type="button" onclick="authGoogle()">Đăng nhập với Google</button></div>
+    <p><small>Để bình luận bạn cần đăng nhập với tài khoản Google</small></p>
+</div>
 
 			<hr class="sep" />
 		</main>
@@ -377,10 +374,34 @@ git push origin master
 			</div>
 		</footer>
 		
-		<script>hljs.initHighlightingOnLoad();</script>
-			<script src="/js/jquery-3.4.1.min.js"></script>
-			<script src="/js/custom.min.js"></script>
+			<script>hljs.initHighlightingOnLoad();</script>
 		
+
+		
+			<script>
+    var config = {
+        apiKey: "AIzaSyBUSl6rCH5j03Fzdgbtrw4ICPXFF79naxQ",
+        authDomain: "gocuatoi.firebaseapp.com",
+        databaseURL: "https://gocuatoi.firebaseio.com"
+    };
+    const PAGE_ID = '4615dfca7045327267e0d3a1d9a2c390';
+</script>
+
+<script src="https://www.gstatic.com/firebasejs/6.6.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.6.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.6.0/firebase-database.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/markdown-it/10.0.0/markdown-it.min.js"></script>
+<script src="/js/shortid-2.2.13.min.js"></script>
+
+		
+
+		
+
+
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+<script type="text/javascript" src="https://gocuatoi.com/js/script.min.ce66efc68aeab17b752b143e0371b1f773ee86f2eb13b0ba0fcb350ed7c30839.js" integrity="sha256-zmbvxorqsXt1KxQ&#43;A3Gx93PuhvLrE7C6D8s1DtfDCDk="></script>
 
 		
 <script type="application/javascript">

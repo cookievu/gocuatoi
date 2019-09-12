@@ -11,6 +11,7 @@ $(document).ready(function () {
         }
     });
     initProgress();
+    firebaseInit();
 });
 
 function parseList() {
@@ -29,7 +30,6 @@ function parseList() {
         }
         latestTag = h1[i].tagName;
     }
-    console.log(list);
     return list;
 }
 
@@ -76,4 +76,17 @@ function initProgress() {
 
         update();
     }
+}
+
+function firebaseInit() {
+    firebase.initializeApp(config);
+    addComment('vi-sao-toi-rua-toi', '3223423', 'Một bài biết quá hay luôn ấy chứ.')
+}
+
+function addComment(postUrl, userId, comment) {
+    firebase.database().ref('/comments').set({
+        postUrl,
+        userId,
+        comment
+    });
 }
