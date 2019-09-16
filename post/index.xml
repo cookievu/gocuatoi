@@ -6,20 +6,10 @@
     <description>Recent content in Post on Vũ&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>&amp;copy; 2019 Vũ</copyright>
-    <lastBuildDate>Sun, 08 Sep 2019 01:07:05 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 31 Aug 2019 17:13:14 +0700</lastBuildDate>
     
 	<atom:link href="https://gocuatoi.com/post/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Vì sao tôi rửa tội</title>
-      <link>https://gocuatoi.com/post/vi-sao-toi-rua-toi/</link>
-      <pubDate>Sun, 08 Sep 2019 01:07:05 +0000</pubDate>
-      
-      <guid>https://gocuatoi.com/post/vi-sao-toi-rua-toi/</guid>
-      <description>Tôi một con người không có niềm tin vào tôn giáo, luôn tin rằng mọi thứ trên thế giới đều vận hành một cách tự nhiên mà không phải bị tác động từ một vị thánh thần nào cả.
-Trong một đời người có lẽ ai cũng sẽ phải một lần đi qua bước ngoặt của cuộc đời. Bước qua nó, bản thân sẽ trở thành một con người mới hoàn toàn khác lạ với con người trước đó.</description>
-    </item>
     
     <item>
       <title>Tản mạn chuyện ga lăng</title>
@@ -40,38 +30,6 @@ Trong một đời người có lẽ ai cũng sẽ phải một lần đi qua b�
       <guid>https://gocuatoi.com/post/tao-blog-ca-nhan-voi-github-pages-va-gohugo/</guid>
       <description>Bạn muốn có một trang blog cá nhân để chia sẻ kiến thức, kinh nghiệm và mọi niềm vui buồn trong cuộc sống. Trên internet hiện có rất rất nhiều cách để tạo ra một trang blog đơn giản và miễn phí. Trong bài viết này mình sẽ hướng dẫn cách tạo một trang blog cá nhân bằng Github Pages và Hugo.
 Github Pages và Hugo là gì ?</description>
-    </item>
-    
-    <item>
-      <title>Developer From Scratch - Part 1</title>
-      <link>https://gocuatoi.com/post/developer-from-scratch/</link>
-      <pubDate>Thu, 29 Aug 2019 09:14:42 +0700</pubDate>
-      
-      <guid>https://gocuatoi.com/post/developer-from-scratch/</guid>
-      <description>Mình là một tên developer khá là -:vãi:- và nay mình sẽ viết bài hướng dẫn làm thế nào để có thể trở thành một developer.
-Bài viết này mang tính vui vẻ, đọc vui là chính nhưng có thể sử dụng để tham khảo. Dành cho tất cả mọi người, bất cứ ai đều có ý định sẽ trở thành một developer.
-Để trở thành một developer bạn cần gi?</description>
-    </item>
-    
-    <item>
-      <title>Lucid Dream - Học khi đang ngủ</title>
-      <link>https://gocuatoi.com/post/lucid-dream-hoc-khi-dang-ngu/</link>
-      <pubDate>Wed, 28 Aug 2019 21:31:15 +0700</pubDate>
-      
-      <guid>https://gocuatoi.com/post/lucid-dream-hoc-khi-dang-ngu/</guid>
-      <description>Mới tình cờ tìm hiểu được một thứ hay ho về giấc mơ của con người. Nếu có cách nào hiểu tận gốc rễ và làm chủ khả năng này thì bản thân sẽ tiến tới được cột mốc rất là cao đó, cái này được gọi là lucid dream.
-Lucid dream là một giấc mơ trong đó bạn nhận ra rằng bạn đang mơ. Bạn có thể có được một số quyền kiểm soát điều khiển được giấc mơ theo ý muốn và hơn hết là có thể nhớ lại toàn bộ trải nghiệm trong giấc mơ khi bạn thức dậy.</description>
-    </item>
-    
-    <item>
-      <title>Singleton trong NodeJs</title>
-      <link>https://gocuatoi.com/post/singleton-trong-nodejs/</link>
-      <pubDate>Sun, 25 Aug 2019 09:10:24 +0700</pubDate>
-      
-      <guid>https://gocuatoi.com/post/singleton-trong-nodejs/</guid>
-      <description>Trong NodeJS, người ta thường sử dụng module. Rất nhiều người gọi đây singleton pattern của Node.js, nhưng đây không thực sự là singleton.
-Không, đây chỉ là một đối tượng (object) được lưu trong bộ nhớ cache - và một đối tượng không được bảo đảm sẽ được sử dụng lại trên tất cả các tệp yêu cầu nó.
-Vấn đề với require Khi bạn gọi hàm &amp;ldquo;require&amp;rdquo; trong Node, nó sử dụng đường dẫn của tệp được require làm khóa bộ đệm.</description>
     </item>
     
     <item>
