@@ -18,7 +18,7 @@
       
       <guid>https://gocuatoi.com/post/singleton-trong-nodejs/</guid>
       <description>Trong NodeJS, người ta thường sử dụng module. Rất nhiều người gọi đây singleton pattern của Node.js, nhưng đây không thực sự là singleton.
-   Không, đây chỉ là một đối tượng (object) được lưu trong bộ nhớ cache - và một đối tượng không được bảo đảm sẽ được sử dụng lại trên tất cả các tệp yêu cầu nó.
+    Không, đây chỉ là một đối tượng (object) được lưu trong bộ nhớ cache - và một đối tượng không được bảo đảm sẽ được sử dụng lại trên tất cả các tệp yêu cầu nó.
 Vấn đề với require Khi bạn gọi hàm &amp;ldquo;require&amp;rdquo; trong Node, nó sử dụng đường dẫn của tệp được require làm khóa bộ đệm.</description>
     </item>
     

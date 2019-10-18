@@ -17,10 +17,7 @@
       <pubDate>Fri, 18 Oct 2019 21:32:22 +0700</pubDate>
       
       <guid>https://gocuatoi.com/post/the-nao-la-mot-tinh-yeu-truong-thanh/</guid>
-      <description>Không cần phải nhắn tin, gọi điện cho nhau dồn dập, sáng tối.
-Cũng chẳng cần khoe khoang với thiên hạ. Cũng đâu nhất thiết phải gặp nhau mỗi ngày.
-Không cần phải khai báo đang ở đâu, làm gì, với ai. Nhưng cũng chẳng thường xuyên giận dỗi.
-Tình yêu trưởng thành, tin tưởng là cần thiết, không đủ tin tưởng thì mạnh dạn chấm dứt.</description>
+      <description>Không cần phải nhắn tin, gọi điện cho nhau dồn dập, sáng tối. Cũng chẳng cần khoe khoang với thiên hạ. Cũng đâu nhất thiết phải gặp nhau mỗi ngày. Không cần phải khai báo đang ở đâu, làm gì, với ai. Nhưng cũng chẳng thường xuyên giận dỗi. Tình yêu trưởng thành, tin tưởng là cần thiết, không đủ tin tưởng thì mạnh dạn chấm dứt.</description>
     </item>
     
     <item>
@@ -82,7 +79,7 @@ Lucid dream là một giấc mơ trong đó bạn nhận ra rằng bạn đang m
       
       <guid>https://gocuatoi.com/post/singleton-trong-nodejs/</guid>
       <description>Trong NodeJS, người ta thường sử dụng module. Rất nhiều người gọi đây singleton pattern của Node.js, nhưng đây không thực sự là singleton.
-   Không, đây chỉ là một đối tượng (object) được lưu trong bộ nhớ cache - và một đối tượng không được bảo đảm sẽ được sử dụng lại trên tất cả các tệp yêu cầu nó.
+    Không, đây chỉ là một đối tượng (object) được lưu trong bộ nhớ cache - và một đối tượng không được bảo đảm sẽ được sử dụng lại trên tất cả các tệp yêu cầu nó.
 Vấn đề với require Khi bạn gọi hàm &amp;ldquo;require&amp;rdquo; trong Node, nó sử dụng đường dẫn của tệp được require làm khóa bộ đệm.</description>
     </item>
     
