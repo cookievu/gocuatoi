@@ -3,7 +3,17 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://gocuatoi.com/post/</loc>
+    <lastmod>2019-10-18T21:32:22+07:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://gocuatoi.com/post/the-nao-la-mot-tinh-yeu-truong-thanh/</loc>
+    <lastmod>2019-10-18T21:32:22+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://gocuatoi.com/</loc>
     <lastmod>2019-10-18T21:32:22+07:00</lastmod>
   </url>
   
@@ -13,17 +23,7 @@
   </url>
   
   <url>
-    <loc>https://gocuatoi.com/post/</loc>
-    <lastmod>2019-08-31T17:13:14+07:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://gocuatoi.com/post/tan-man-chuyen-ga-lang/</loc>
-    <lastmod>2019-08-31T17:13:14+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://gocuatoi.com/</loc>
     <lastmod>2019-08-31T17:13:14+07:00</lastmod>
   </url>
   
@@ -58,7 +58,17 @@
   </url>
   
   <url>
+    <loc>https://gocuatoi.com/tags/from-scratch/</loc>
+    <lastmod>2019-08-29T09:14:42+07:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://gocuatoi.com/post/lucid-dream-hoc-khi-dang-ngu/</loc>
+    <lastmod>2019-08-28T21:31:15+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://gocuatoi.com/tags/lucid-dream/</loc>
     <lastmod>2019-08-28T21:31:15+07:00</lastmod>
   </url>
   
@@ -70,6 +80,16 @@
   <url>
     <loc>https://gocuatoi.com/work/</loc>
     <lastmod>2019-08-25T10:00:24+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://gocuatoi.com/tags/nodejs/</loc>
+    <lastmod>2019-08-25T09:10:24+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://gocuatoi.com/tags/singleton/</loc>
+    <lastmod>2019-08-25T09:10:24+07:00</lastmod>
   </url>
   
   <url>
