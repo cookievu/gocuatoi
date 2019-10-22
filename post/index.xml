@@ -6,10 +6,20 @@
     <description>Recent content in Post on Vũ&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>&amp;copy; 2019 Vũ</copyright>
-    <lastBuildDate>Fri, 18 Oct 2019 21:32:22 +0700</lastBuildDate>
+    <lastBuildDate>Sat, 19 Oct 2019 15:53:49 +0700</lastBuildDate>
     
 	<atom:link href="https://gocuatoi.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Di cư sang Vim</title>
+      <link>https://gocuatoi.com/post/di-cu-sang-vim/</link>
+      <pubDate>Sat, 19 Oct 2019 15:53:49 +0700</pubDate>
+      
+      <guid>https://gocuatoi.com/post/di-cu-sang-vim/</guid>
+      <description>Vim là gì? Vim là một trình soạn thảo văn bản cấu hình cao để tạo và thay đổi bất kỳ loại văn bản một cách hiệu quả. Nó được bao gồm như hầu hết các hệ thống UNIX &amp;ldquo;vi&amp;rdquo; với và với Apple OS X.
+Nói ngắn gọn thì Vim là một trình soạn thảo văn bản nhẹ nhàng và đơn giản và được sử dụng khá phổ biến.</description>
+    </item>
     
     <item>
       <title>Thế nào là một tình yêu trường thành?</title>

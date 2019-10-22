@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>neovim on Vũ&#39;s Blog</title>
+    <link>https://gocuatoi.com/tags/neovim/</link>
+    <description>Recent content in neovim on Vũ&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>&amp;copy; 2019 Vũ</copyright>
+    <lastBuildDate>Sat, 19 Oct 2019 15:53:49 +0700</lastBuildDate>
+    
+	<atom:link href="https://gocuatoi.com/tags/neovim/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Di cư sang Vim</title>
+      <link>https://gocuatoi.com/post/di-cu-sang-vim/</link>
+      <pubDate>Sat, 19 Oct 2019 15:53:49 +0700</pubDate>
+      
+      <guid>https://gocuatoi.com/post/di-cu-sang-vim/</guid>
+      <description>Vim là gì? Vim là một trình soạn thảo văn bản cấu hình cao để tạo và thay đổi bất kỳ loại văn bản một cách hiệu quả. Nó được bao gồm như hầu hết các hệ thống UNIX &amp;ldquo;vi&amp;rdquo; với và với Apple OS X.
+Nói ngắn gọn thì Vim là một trình soạn thảo văn bản nhẹ nhàng và đơn giản và được sử dụng khá phổ biến.</description>
+    </item>
+    
+  </channel>
+</rss>
