@@ -6,10 +6,21 @@
     <description>Recent content in Post on Vũ&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>&amp;copy; 2019 Vũ</copyright>
-    <lastBuildDate>Sat, 19 Oct 2019 15:53:49 +0700</lastBuildDate>
+    <lastBuildDate>Sun, 03 Nov 2019 10:56:44 +0700</lastBuildDate>
     
 	<atom:link href="https://gocuatoi.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Coc - Intellisense engine cho Vim/Neovim</title>
+      <link>https://gocuatoi.com/post/coc-intellisense-engine-cho-vim-neovim/</link>
+      <pubDate>Sun, 03 Nov 2019 10:56:44 +0700</pubDate>
+      
+      <guid>https://gocuatoi.com/post/coc-intellisense-engine-cho-vim-neovim/</guid>
+      <description>Mở đầu Trước khi đi vào nội dung bài viết thì ta cần biết được Intellisense engine là gì nhé. Cho ai chưa biết.
+ IntelliSense is a general term for a variety of code editing features including: code completion, parameter info, quick info, and member lists. IntelliSense features are sometimes called by other names such as &amp;ldquo;code completion&amp;rdquo;, &amp;ldquo;content assist&amp;rdquo;, and &amp;ldquo;code hinting&amp;rdquo;.
+ Nói cho dễ hiểu thì IntelliSense là một thuật ngữ nói về tính năng hỗ trợ cho dev thực hiện việc code dễ thở hơn như khả năng hoàn thành mã, hỗ trợ nội dung, gợi ý mã, &amp;hellip;</description>
+    </item>
     
     <item>
       <title>Di cư sang Vim</title>

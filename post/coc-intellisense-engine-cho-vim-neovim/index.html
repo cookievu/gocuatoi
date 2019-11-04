@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="vi">
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="generator" content="Hugo 0.58.3" />
+		<title>Coc - Intellisense engine cho Vim/Neovim - Vũ&#39;s Blog</title>
+
+		<meta name="description" content="Coc là một intellisense engine cho Vim/Neovim.">
+
+		<meta property="og:title" content="Coc - Intellisense engine cho Vim/Neovim" />
+<meta property="og:description" content="Coc là một intellisense engine cho Vim/Neovim." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://gocuatoi.com/post/coc-intellisense-engine-cho-vim-neovim/" />
+
+<meta property="og:image" content="https://gocuatoi.com/post/coc-intellisense-engine-cho-vim-neovim/coc-nvim-demo-1.png" />
+<meta property="article:published_time" content="2019-11-03T10:56:44+07:00" />
+<meta property="article:modified_time" content="2019-11-03T10:56:44+07:00" />
+
+		<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://gocuatoi.com/post/coc-intellisense-engine-cho-vim-neovim/coc-nvim-demo-1.png"/>
+
+<meta name="twitter:title" content="Coc - Intellisense engine cho Vim/Neovim"/>
+<meta name="twitter:description" content="Coc là một intellisense engine cho Vim/Neovim."/>
+
+
+		
+		<link rel="shortcut icon" href="/img/favicon.png">
+		
+
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600|Space+Mono:400,700&display=swap&subset=vietnamese" rel="stylesheet">
+		
+
+
+
+
+
+
+
+<link rel="stylesheet" href="https://gocuatoi.com/css/style.min.3f2657e88c347decb73858326e41cdca857a3f9435afddfa321e6cc13815cc0f.css" integrity="sha256-PyZX6Iw0fey3OFgybkHNyoV6P5Q1r936Mh5swTgVzA8="/>
+
+		
+		<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/dracula.min.css">
+		<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+		
+		<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/languages/javascript.min.js"></script>
+		
+		
+	</head>
+
+<body>
+<header class="container no-print">
+	<div class="u-header">
+		<nav class="bar">
+	<ul><li>
+			<a href="/">
+				<img class="icon-text" src="/img/prev.svg"/>
+			</a>
+		</li><li><a href="/about">About </a></li><li><a href="/post/">Posts</a></li></ul>
+</nav>
+
+	</div>
+</header>
+<main class="container">
+
+<progress id="reading-progress" class="progress" value="0">
+    <span class="progress-bar"></span>
+</progress>
+<article>
+    <header><hgroup id="brand">
+	<h1>Coc - Intellisense engine cho Vim/Neovim</h1>
+	<h5>
+		
+		<time datetime="2019-11-03 10:56:44 &#43;0700 &#43;07">Nov 03, 2019</time>
+		<span class="no-print">
+			-
+				
+				<a href="/tags/vim">vim</a>
+				
+				<a href="/tags/neovim">neovim</a>
+				
+				<a href="/tags/coc">coc</a>
+				
+				<a href="/tags/Intellisense">Intellisense</a>
+				
+				<a href="/tags/lsp">lsp</a>
+				<span>
+	</h5>
+	
+</hgroup>
+<hr class="sep" />
+</header>
+    
+
+<h1 id="mở-đầu">Mở đầu</h1>
+
+<p>Trước khi đi vào nội dung bài viết thì ta cần biết được Intellisense engine là gì nhé.
+Cho ai chưa biết.</p>
+
+<blockquote>
+<p>IntelliSense is a general term for a variety of code editing features including: code completion, parameter info, quick info, and member lists. IntelliSense features are sometimes called by other names such as &ldquo;code completion&rdquo;, &ldquo;content assist&rdquo;, and &ldquo;code hinting&rdquo;.</p>
+</blockquote>
+
+<p>Nói cho dễ hiểu thì IntelliSense là một thuật ngữ nói về tính năng hỗ trợ cho dev thực hiện việc code dễ thở hơn như khả năng hoàn thành mã, hỗ trợ nội dung, gợi ý mã, &hellip;</p>
+
+<p>Cho bạn nào chưa biết, lý do VSCode nổi tiếng và phổ biến đến thế là bởi vì nó có một bộ IntelliSense Engine cực cực xịn sò. Nó có khả năng hỗ trợ rất nhiều loại ngôn ngữ rất hiệu quả đặc biệt là javascript/typescript. Lý do nó xịn như vậy cũng đơn giản là vì nó được làm bởi những lập trình viên giỏi Microsoft. Nếu VSCode thiếu đi cái IntelliSense này thì có lẽ nó không được nổi tiếng và phổ biến như bây giờ.</p>
+
+<p>Rất tiếc là mình không thích sài VSCode nên thật tiếc là mình không thể sử dụng được cái IntelliSense sịn sò là <a href="https://github.com/neoclide/coc.nvim">Coc.nvim</a>.</p>
+
+<p>Coc là một intellisense engine cho Vim/Neovim.</p>
+
+<p>Coc là một plugin cực kì xịn luôn. Nó hỗ trợ rất là nhiều ngôn ngữ như javascript, typescript, golang, php, &hellip; và cài đặt các ngôn ngữ bổ sung rất dễ dàng mà không cần phải config nhiều chỉ bằng câu lệnh <code>:CocInstall [name]</code>.</p>
+
+<h1 id="cài-đặt">Cài đặt</h1>
+
+<h3 id="coc-cần-có-nodejs-để-hoạt-động-nhé">Coc cần có nodejs để hoạt động nhé.</h3>
+
+<p><code>curl -sL install-node.now.sh/lts | bash</code></p>
+
+<h3 id="cài-đặt-bằng-vim-plug-https-github-com-junegunn-vim-plug">Cài đặt bằng <a href="https://github.com/junegunn/vim-plug">vim-plug</a></h3>
+
+<pre><code>&quot; Use release branch (Recommend)
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+&quot; Or latest tag
+Plug 'neoclide/coc.nvim', {'tag': '*', 'branch': 'release'}
+&quot; Or build from source code by use yarn: https://yarnpkg.com
+Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
+</code></pre>
+
+<p>Khởi động lại Vim/Neovim và chạy <code>:PlugInstall</code>.</p>
+
+<h3 id="cài-thêm-extension">Cài thêm extension.</h3>
+
+<p>Truy cập đường dẫn <a href="https://github.com/neoclide/coc.nvim/wiki/Using-coc-extensions">Using coc extensions</a> để xem thêm các extension về ngôn ngữ mà bạn sử dụng.</p>
+
+<p>Mình thì sử dụng những extension này: coc-tsserver, coc-html, coc-css, coc-angular.
+Để cài đặt extension thì chỉ cần chạy <code>:CocInstall [name of extension]</code> là được.</p>
+
+<h1 id="ảnh-demo">Ảnh demo</h1>
+
+<p>
+
+
+
+
+<div class="image_placeholder" style="max-width: 2560px">
+    <div class="placeholder" data-large="https://gocuatoi.com/post/coc-intellisense-engine-cho-vim-neovim/coc-nvim-demo-1_hu368c8423bfe4956e94a37c8d75534bf6_686022_1500x0_resize_box_2.png">
+        <img class="img-small"
+             src="https://gocuatoi.com/post/coc-intellisense-engine-cho-vim-neovim/coc-nvim-demo-1_hu368c8423bfe4956e94a37c8d75534bf6_686022_4x0_resize_q20_box_2.png"
+             width=2560
+             height=1600
+                 alt="Coc.vim Demo 1" 
+        >
+        <div style="padding-bottom: 62.5%;"></div>
+    </div>
+</div>
+<br/>
+
+
+
+
+
+<div class="image_placeholder" style="max-width: 2560px">
+    <div class="placeholder" data-large="https://gocuatoi.com/post/coc-intellisense-engine-cho-vim-neovim/coc-nvim-demo2_hu368c8423bfe4956e94a37c8d75534bf6_641425_1500x0_resize_box_2.png">
+        <img class="img-small"
+             src="https://gocuatoi.com/post/coc-intellisense-engine-cho-vim-neovim/coc-nvim-demo2_hu368c8423bfe4956e94a37c8d75534bf6_641425_4x0_resize_q20_box_2.png"
+             width=2560
+             height=1600
+                 alt="Coc.vim Demo 2" 
+        >
+        <div style="padding-bottom: 62.5%;"></div>
+    </div>
+</div>
+<br/></p>
+
+<h1 id="kết">Kết</h1>
+
+<p>Coc đối với mình có thể một IntelliSense Engine mạnh mẽ nhất cho Vim/NeoVim mà mình từng sử dụng qua. Nó giúp cho vim của mình xịn sò không thua kém gì VSCode nổi tiếng cả :D.</p>
+
+</article>
+<ul id="content-sidebar" class="sidebar"></ul>
+<nav class="no-print post-nav">
+    
+    <a class="prev-post" href="https://gocuatoi.com/post/di-cu-sang-vim/">
+        <img class="icon-text" src="/img/prev.svg"/>Di cư sang Vim</a>
+    
+    
+</nav>
+
+
+<section id="related">
+  <h4>See Also</h4>
+  <ul>
+    
+  	<li><a href="/post/di-cu-sang-vim/">Di cư sang Vim</a></li>
+  	
+  </ul>
+</section>
+
+
+
+<h3>Bình luận</h3>
+<ul id="comment" class="comment-list">
+
+</ul>
+<div class="comment-box" style="display: none" id="commentBox">
+    <div id="my-avatar" class="my-avatar"></div>
+    <div class="comment-form">
+        <p style="margin: 0"><small>Bạn nghĩ bài viết này như thế nào?</small></p>
+        <textarea rows="3" style="width: 100%" placeholder="Nhập bình luận ở đây" id="comment-content"></textarea>
+        <button type="button" onclick="addComment()">Gửi bình luận</button>
+
+        <small>Bình luận không thể xóa sau khi đăng</small>
+
+    </div>
+</div>
+<div class="login-box" id="loginBox">
+    <div><button type="button" onclick="authGoogle()">Đăng nhập với Google</button></div>
+    <p><small>Để bình luận bạn cần đăng nhập với tài khoản Google</small></p>
+</div>
+
+			<hr class="sep" />
+		</main>
+
+
+		<footer class="container no-print">
+			<div class="u-footer">
+				
+<a href="mailto:tuanvu0995@gmail.com"><img class="icon-social" src="/img/email.svg" alt="Email Me!"/></a>
+
+
+<a href="https://github.com/cookievu"><img class="icon-social" src="/img/github.svg" alt="Github"/></a>
+
+
+<a href="https://twitter.com/laituanvu"><img class="icon-social" src="/img/twitter.svg" alt="Twitter"/></a>
+
+<a href="https://gocuatoi.com/index.xml" target="_blank"><img class="icon-social" src="/img/feed.svg" alt="Feed"></a>
+
+				<p>
+					
+					
+					&copy; 2019 Vũ
+					
+					
+					| <a href="/about/license">License</a>
+					
+				</p>
+				
+				<a href="#brand">
+					<img class="icon-text" src="/img/toup.svg" alt="To Up"/>
+					<span>Back to Up</span>
+				</a>
+				
+			</div>
+		</footer>
+		
+			<script>hljs.initHighlightingOnLoad();</script>
+		
+
+		
+
+
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+<script type="text/javascript" src="https://gocuatoi.com/js/script.min.2ca85bf0d728bdcae343f8659a050b45d486e588d9be88bef99a80afd9ab12f1.js" integrity="sha256-LKhb8NcovcrjQ/hlmgULRdSG5YjZvoi&#43;&#43;ZqAr9mrEvE="></script>
+
+		
+			<script>
+    var config = {
+        apiKey: "AIzaSyBUSl6rCH5j03Fzdgbtrw4ICPXFF79naxQ",
+        authDomain: "gocuatoi.firebaseapp.com",
+        databaseURL: "https://gocuatoi.firebaseio.com"
+    };
+    
+    const PAGE_ID = '21dd7eec09ec4e5a1dc20b2036111e8c';
+    
+</script>
+
+<script src="https://www.gstatic.com/firebasejs/6.6.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.6.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.6.0/firebase-database.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/markdown-it/10.0.0/markdown-it.min.js"></script>
+
+
+
+<script type="text/javascript" src="https://gocuatoi.com/js/comment.min.7f728e16986a89c782412c33477d203d5d4b09fc6ef9d99400d1f5ed7f3de4d9.js" integrity="sha256-f3KOFphqiceCQSwzR30gPV1LCfxu&#43;dmUANH17X895Nk="></script>
+		
+
+		
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-140402812-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+	</body>
+</html>
+

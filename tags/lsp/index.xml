@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>neovim on Vũ&#39;s Blog</title>
-    <link>https://gocuatoi.com/tags/neovim/</link>
-    <description>Recent content in neovim on Vũ&#39;s Blog</description>
+    <title>lsp on Vũ&#39;s Blog</title>
+    <link>https://gocuatoi.com/tags/lsp/</link>
+    <description>Recent content in lsp on Vũ&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>&amp;copy; 2019 Vũ</copyright>
     <lastBuildDate>Sun, 03 Nov 2019 10:56:44 +0700</lastBuildDate>
     
-	<atom:link href="https://gocuatoi.com/tags/neovim/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://gocuatoi.com/tags/lsp/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -20,16 +20,6 @@
       <description>Mở đầu Trước khi đi vào nội dung bài viết thì ta cần biết được Intellisense engine là gì nhé. Cho ai chưa biết.
  IntelliSense is a general term for a variety of code editing features including: code completion, parameter info, quick info, and member lists. IntelliSense features are sometimes called by other names such as &amp;ldquo;code completion&amp;rdquo;, &amp;ldquo;content assist&amp;rdquo;, and &amp;ldquo;code hinting&amp;rdquo;.
  Nói cho dễ hiểu thì IntelliSense là một thuật ngữ nói về tính năng hỗ trợ cho dev thực hiện việc code dễ thở hơn như khả năng hoàn thành mã, hỗ trợ nội dung, gợi ý mã, &amp;hellip;</description>
-    </item>
-    
-    <item>
-      <title>Di cư sang Vim</title>
-      <link>https://gocuatoi.com/post/di-cu-sang-vim/</link>
-      <pubDate>Sat, 19 Oct 2019 15:53:49 +0700</pubDate>
-      
-      <guid>https://gocuatoi.com/post/di-cu-sang-vim/</guid>
-      <description>Vim là gì? Vim là một trình soạn thảo văn bản cấu hình cao để tạo và thay đổi bất kỳ loại văn bản một cách hiệu quả. Nó được bao gồm như hầu hết các hệ thống UNIX &amp;ldquo;vi&amp;rdquo; với và với Apple OS X.
-Nói ngắn gọn thì Vim là một trình soạn thảo văn bản nhẹ nhàng và đơn giản và được sử dụng khá phổ biến.</description>
     </item>
     
   </channel>

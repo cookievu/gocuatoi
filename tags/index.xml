@@ -6,15 +6,42 @@
     <description>Recent content in Tags on Vũ&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>&amp;copy; 2019 Vũ</copyright>
-    <lastBuildDate>Sat, 19 Oct 2019 15:53:49 +0700</lastBuildDate>
+    <lastBuildDate>Sun, 03 Nov 2019 10:56:44 +0700</lastBuildDate>
     
 	<atom:link href="https://gocuatoi.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>coc</title>
+      <link>https://gocuatoi.com/tags/coc/</link>
+      <pubDate>Sun, 03 Nov 2019 10:56:44 +0700</pubDate>
+      
+      <guid>https://gocuatoi.com/tags/coc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Intellisense</title>
+      <link>https://gocuatoi.com/tags/intellisense/</link>
+      <pubDate>Sun, 03 Nov 2019 10:56:44 +0700</pubDate>
+      
+      <guid>https://gocuatoi.com/tags/intellisense/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>lsp</title>
+      <link>https://gocuatoi.com/tags/lsp/</link>
+      <pubDate>Sun, 03 Nov 2019 10:56:44 +0700</pubDate>
+      
+      <guid>https://gocuatoi.com/tags/lsp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>neovim</title>
       <link>https://gocuatoi.com/tags/neovim/</link>
-      <pubDate>Sat, 19 Oct 2019 15:53:49 +0700</pubDate>
+      <pubDate>Sun, 03 Nov 2019 10:56:44 +0700</pubDate>
       
       <guid>https://gocuatoi.com/tags/neovim/</guid>
       <description></description>
@@ -23,7 +50,7 @@
     <item>
       <title>vim</title>
       <link>https://gocuatoi.com/tags/vim/</link>
-      <pubDate>Sat, 19 Oct 2019 15:53:49 +0700</pubDate>
+      <pubDate>Sun, 03 Nov 2019 10:56:44 +0700</pubDate>
       
       <guid>https://gocuatoi.com/tags/vim/</guid>
       <description></description>
