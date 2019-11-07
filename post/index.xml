@@ -6,10 +6,19 @@
     <description>Recent content in Post on Vũ&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>&amp;copy; 2019 Vũ</copyright>
-    <lastBuildDate>Sun, 03 Nov 2019 10:56:44 +0700</lastBuildDate>
+    <lastBuildDate>Thu, 07 Nov 2019 14:30:47 +0700</lastBuildDate>
     
 	<atom:link href="https://gocuatoi.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Setup môi trường lập trình PHP trên macOS</title>
+      <link>https://gocuatoi.com/post/setup-moi-truong-lap-trinh-php-tren-macos/</link>
+      <pubDate>Thu, 07 Nov 2019 14:30:47 +0700</pubDate>
+      
+      <guid>https://gocuatoi.com/post/setup-moi-truong-lap-trinh-php-tren-macos/</guid>
+      <description>Để thiết lập một môi trường lập trình PHP hiện tại rất là dễ dàng. Chỉ cần bạn lên google và tìm kiếm một chút là có một đống những bài viết hướng dẫn rất ngắn gọn và nhanh chóng. Chỉ cần bỏ và chưa tới 1 phút mà đã có thể bắt đầu code được luôn rồi. Thế nên trong bài viết này mình sẽ không hướng dẫn setup môi trường php không phải theo những cách đơn giản và nhanh gọn đó, mình sẽ hướng dẫn theo cách &amp;ldquo;try hard&amp;rdquo; hơn =)).</description>
+    </item>
     
     <item>
       <title>Coc - Intellisense engine cho Vim/Neovim</title>

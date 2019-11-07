@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="vi">
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="generator" content="Hugo 0.58.3" />
+		<title>Setup môi trường lập trình PHP trên macOS - Vũ&#39;s Blog</title>
+
+		<meta name="description" content="About the page">
+
+		<meta property="og:title" content="Setup môi trường lập trình PHP trên macOS" />
+<meta property="og:description" content="About the page" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://gocuatoi.com/post/setup-moi-truong-lap-trinh-php-tren-macos/" />
+<meta property="article:published_time" content="2019-11-07T14:30:47+07:00" />
+<meta property="article:modified_time" content="2019-11-07T14:30:47+07:00" />
+
+		<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Setup môi trường lập trình PHP trên macOS"/>
+<meta name="twitter:description" content="About the page"/>
+
+
+		
+		<link rel="shortcut icon" href="/img/favicon.png">
+		
+
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600|Space+Mono:400,700&display=swap&subset=vietnamese" rel="stylesheet">
+		
+
+
+
+
+
+
+
+<link rel="stylesheet" href="https://gocuatoi.com/css/style.min.3f2657e88c347decb73858326e41cdca857a3f9435afddfa321e6cc13815cc0f.css" integrity="sha256-PyZX6Iw0fey3OFgybkHNyoV6P5Q1r936Mh5swTgVzA8="/>
+
+		
+		<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/dracula.min.css">
+		<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+		
+		<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/languages/javascript.min.js"></script>
+		
+		
+	</head>
+
+<body>
+<header class="container no-print">
+	<div class="u-header">
+		<nav class="bar">
+	<ul><li>
+			<a href="/">
+				<img class="icon-text" src="/img/prev.svg"/>
+			</a>
+		</li><li><a href="/about">About </a></li><li><a href="/post/">Posts</a></li></ul>
+</nav>
+
+	</div>
+</header>
+<main class="container">
+
+<progress id="reading-progress" class="progress" value="0">
+    <span class="progress-bar"></span>
+</progress>
+<article>
+    <header><hgroup id="brand">
+	<h1>Setup môi trường lập trình PHP trên macOS</h1>
+	<h5>
+		
+		<time datetime="2019-11-07 14:30:47 &#43;0700 &#43;07">Nov 07, 2019</time>
+		<span class="no-print">
+			-
+				
+				<a href="/tags/macos">macos</a>
+				
+				<a href="/tags/php">php</a>
+				<span>
+	</h5>
+	
+</hgroup>
+<hr class="sep" />
+</header>
+    
+
+<p>Để thiết lập một môi trường lập trình PHP hiện tại rất là dễ dàng. Chỉ cần bạn lên google và tìm kiếm một chút là có một đống những bài viết hướng dẫn rất ngắn gọn và nhanh chóng. Chỉ cần bỏ và chưa tới 1 phút mà đã có thể bắt đầu code được luôn rồi. Thế nên trong bài viết này mình sẽ không hướng dẫn setup môi trường php không phải theo những cách đơn giản và nhanh gọn đó, mình sẽ hướng dẫn theo cách &ldquo;try hard&rdquo; hơn =)).</p>
+
+<h1 id="homebrew">Homebrew</h1>
+
+<p>Mọi người dùng macOS chắc không lạ gì Homebrew nữa đúng không.</p>
+
+<blockquote>
+<p>Homebrew installs the stuff you need that Apple (or your Linux system) didn’t.</p>
+</blockquote>
+
+<p>Cài đặt:</p>
+
+<pre><code>/usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;
+</code></pre>
+
+<p>Kiểm tra cài đặt:</p>
+
+<pre><code>~ brew --version
+Homebrew 2.1.16
+Homebrew/homebrew-core (git revision bbde; last commit 2019-11-06)
+Homebrew/homebrew-cask (git revision accd5; last commit 2019-11-07)
+</code></pre>
+
+<h1 id="nginx">Nginx</h1>
+
+<p>Mặc định thì macOS đã cài sẵn apache rồi nhưng mình lại không thích sài apache nên mình sẽ dùng nginx. Đa phần các hệ thống máy chủ trên thế giới đều sử dụng nginx làm websever bởi tính ổn định và hiệu xuất cao của nó.</p>
+
+<pre><code>brew install nginx
+</code></pre>
+
+<p>Sau khi cài đặt thì khởi động nginx:</p>
+
+<pre><code>brew services start nginx
+</code></pre>
+
+<p>Lệnh này sẽ giúp cho nginx sẽ auto run mỗi khi bạn mở máy.</p>
+
+<p>Mở trình duyệt và truy cập địa chỉ <a href="http://localhost:8080">http://localhost:8080</a> và nếu thấy trình duyệt hiển thị như hình dưới là ok.
+
+
+
+
+
+<div class="image_placeholder" style="max-width: 1930px">
+    <div class="placeholder" data-large="https://gocuatoi.com/post/setup-moi-truong-lap-trinh-php-tren-macos/nginx-localhost_huf499980c16b711d17bb9eeb3ce20b03f_424319_1500x0_resize_box_2.png">
+        <img class="img-small"
+             src="https://gocuatoi.com/post/setup-moi-truong-lap-trinh-php-tren-macos/nginx-localhost_huf499980c16b711d17bb9eeb3ce20b03f_424319_4x0_resize_q20_box_2.png"
+             width=1930
+             height=1340
+                 alt="Nginx Localhost" 
+        >
+        <div style="padding-bottom: 69.43005181347151%;"></div>
+    </div>
+</div>
+<br/></p>
+
+<h1 id="php">PHP</h1>
+
+<p>Mặc định macOS cũng đã có PHP đi kèm nhưng mình luôn muốn có bản PHP mới nhất nên cũng sẽ cài mới luôn.</p>
+
+<pre><code>brew install php@7.3
+</code></pre>
+
+<p>Mặc dù bạn đã cài PHP mới rồi nhưng hệ thống vẫn còn sử dụng bản PHP cũ nên mình sẽ phải link bản PHP mới cài.</p>
+
+<pre><code>brew link --force php@7.3
+</code></pre>
+
+<p>Kiểm tra xem đã link thành công hay chưa.</p>
+
+<pre><code>~ php -v
+PHP 7.3.10 (cli) (built: Sep 30 2019 19:59:57) ( NTS )
+Copyright (c) 1997-2018 The PHP Group
+Zend Engine v3.3.10, Copyright (c) 1998-2018 Zend Technologies
+    with Zend OPcache v7.3.10, Copyright (c) 1999-2018, by Zend Technologies
+</code></pre>
+
+<h1 id="mariadb">MariaDB</h1>
+
+<p>MariaDB là một phiên bản cải tiến của Mysql vì thế mà MariaDB ngon hơn nhiều. Do vậy mình cũng chọn MariaDB làm cơ sở liệu chính luôn.</p>
+
+<pre><code>brew install mariadb
+</code></pre>
+
+<p>Khởi động MariaDB</p>
+
+<pre><code>brew services start mysql
+</code></pre>
+
+<p>Truy cập vào MariaDB console để đặt mật khẩu cho tài khoản root:</p>
+
+<pre><code>mariadb
+&gt; use mysql;
+&gt; ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'root password';
+&gt; FLUSH PRIVILEGES;
+&gt; quit;
+</code></pre>
+
+<p>Cuối cùng là đăng nhập vào MariaDB bằng password vừa mới tạo.</p>
+
+<pre><code>mysql -u root -p
+</code></pre>
+
+<h1 id="dnsmasq">Dnsmasq</h1>
+
+<p>Dnsmasq là một phần mềm giúp cho việc cấu hình DNS tự động. Giúp cho mình có thể giả lập bất cứ tên miền nào mà chúng ta muốn, tất nhiên là chỉ ở local thôi nhé.
+Ở đây mình sẽ dùng Dnsmasq để hỗ trợ cho phần virtual host.</p>
+
+<p>Đầu tiên là cài đặt:</p>
+
+<pre><code>brew install dnsmasq
+</code></pre>
+
+<p>Thêm tên miền .test vào dnsmasq:</p>
+
+<pre><code>echo 'address=/.test/127.0.0.1' &gt; /usr/local/etc/dnsmasq.conf
+</code></pre>
+
+<p>Add domain vào resolver</p>
+
+<pre><code>sudo mkdir -v /etc/resolver
+sudo bash -c 'echo &quot;nameserver 127.0.0.1&quot; &gt; /etc/resolver/test'
+</code></pre>
+
+<p>Khởi động Dnsmasq (lưu lý là lần này có sudo nhé):</p>
+
+<pre><code>sudo brew services start dnsmasq
+</code></pre>
+
+<p>Ping một tên miền bất kỳ để kiểm tra:</p>
+
+<pre><code> ~ ping gocuatoi.test
+PING gocuatoi.test (127.0.0.1): 56 data bytes
+64 bytes from 127.0.0.1: icmp_seq=0 ttl=64 time=0.032 ms
+64 bytes from 127.0.0.1: icmp_seq=1 ttl=64 time=0.120 ms
+64 bytes from 127.0.0.1: icmp_seq=2 ttl=64 time=0.114 ms
+64 bytes from 127.0.0.1: icmp_seq=3 ttl=64 time=0.115 ms
+</code></pre>
+
+</article>
+<ul id="content-sidebar" class="sidebar"></ul>
+<nav class="no-print post-nav">
+    
+    <a class="prev-post" href="https://gocuatoi.com/post/coc-intellisense-engine-cho-vim-neovim/">
+        <img class="icon-text" src="/img/prev.svg"/>Coc - Intellisense engine cho Vim/Neovim</a>
+    
+    
+</nav>
+
+
+
+
+<h3>Bình luận</h3>
+<ul id="comment" class="comment-list">
+
+</ul>
+<div class="comment-box" style="display: none" id="commentBox">
+    <div id="my-avatar" class="my-avatar"></div>
+    <div class="comment-form">
+        <p style="margin: 0"><small>Bạn nghĩ bài viết này như thế nào?</small></p>
+        <textarea rows="3" style="width: 100%" placeholder="Nhập bình luận ở đây" id="comment-content"></textarea>
+        <button type="button" onclick="addComment()">Gửi bình luận</button>
+
+        <small>Bình luận không thể xóa sau khi đăng</small>
+
+    </div>
+</div>
+<div class="login-box" id="loginBox">
+    <div><button type="button" onclick="authGoogle()">Đăng nhập với Google</button></div>
+    <p><small>Để bình luận bạn cần đăng nhập với tài khoản Google</small></p>
+</div>
+
+			<hr class="sep" />
+		</main>
+
+
+		<footer class="container no-print">
+			<div class="u-footer">
+				
+<a href="mailto:tuanvu0995@gmail.com"><img class="icon-social" src="/img/email.svg" alt="Email Me!"/></a>
+
+
+<a href="https://github.com/cookievu"><img class="icon-social" src="/img/github.svg" alt="Github"/></a>
+
+
+<a href="https://twitter.com/laituanvu"><img class="icon-social" src="/img/twitter.svg" alt="Twitter"/></a>
+
+<a href="https://gocuatoi.com/index.xml" target="_blank"><img class="icon-social" src="/img/feed.svg" alt="Feed"></a>
+
+				<p>
+					
+					
+					&copy; 2019 Vũ
+					
+					
+					| <a href="/about/license">License</a>
+					
+				</p>
+				
+				<a href="#brand">
+					<img class="icon-text" src="/img/toup.svg" alt="To Up"/>
+					<span>Back to Up</span>
+				</a>
+				
+			</div>
+		</footer>
+		
+			<script>hljs.initHighlightingOnLoad();</script>
+		
+
+		
+
+
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+<script type="text/javascript" src="https://gocuatoi.com/js/script.min.2ca85bf0d728bdcae343f8659a050b45d486e588d9be88bef99a80afd9ab12f1.js" integrity="sha256-LKhb8NcovcrjQ/hlmgULRdSG5YjZvoi&#43;&#43;ZqAr9mrEvE="></script>
+
+		
+			<script>
+    var config = {
+        apiKey: "AIzaSyBUSl6rCH5j03Fzdgbtrw4ICPXFF79naxQ",
+        authDomain: "gocuatoi.firebaseapp.com",
+        databaseURL: "https://gocuatoi.firebaseio.com"
+    };
+    
+    const PAGE_ID = '8e2a2c2ef9acb24715e95e83e3d9e486';
+    
+</script>
+
+<script src="https://www.gstatic.com/firebasejs/6.6.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.6.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.6.0/firebase-database.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/markdown-it/10.0.0/markdown-it.min.js"></script>
+
+
+
+<script type="text/javascript" src="https://gocuatoi.com/js/comment.min.7f728e16986a89c782412c33477d203d5d4b09fc6ef9d99400d1f5ed7f3de4d9.js" integrity="sha256-f3KOFphqiceCQSwzR30gPV1LCfxu&#43;dmUANH17X895Nk="></script>
+		
+
+		
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-140402812-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+	</body>
+</html>
+
